@@ -48,7 +48,7 @@
       
       })
      promise.catch(e => console.log(e.message));
-     alert("Ingresa un mail válido");
+     
     });
   
 
