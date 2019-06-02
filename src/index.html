@@ -20,26 +20,14 @@
   <div id="show-msg"></div>
 
   <div id="content"></div>
-
-
+ 
+  <!-- FIREBASE APP, MUST BE FIRST-->
   <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+  <!--FIREBASE SERVICES-->
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
 
-<script>
-//Inicializar Firebase
-        const firebaseConfig = {
-              apiKey: "AIzaSyA_nw6Ca-i67DGP3X0RXHWOVLUZcxh_8go",
-              authDomain: "mychingu-123.firebaseapp.com",
-              databaseURL: "https://mychingu-123.firebaseio.com",
-              projectId: "mychingu-123",
-              storageBucket: "mychingu-123.appspot.com",
-              messagingSenderId: "849463517687",
-              appId: "1:849463517687:web:5cfb19a421bc1e0a"
-            };
-            // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        </script>
 
 <script type="module" src="./app.js"></script>
 
