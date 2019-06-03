@@ -2,6 +2,7 @@
 // VALIDACIÓN LARGO DE CLAVE
 
 export const validateNewUser = (name, email, password) => {
+
     if (name === '' || email === '' || password === '') {
          return false;
     }
