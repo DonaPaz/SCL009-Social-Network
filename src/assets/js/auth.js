@@ -1,18 +1,43 @@
-export const auth = () =>{
+import { validateNewUser } from '../js/validator.js'
 
+export const registerUser = (name, email, password) => {
+
+  if (validateNewUser(name, email, password)) {
+    alert("El usuario fue creado exitosamente");
+    const auth = firebase.auth();
+    const promise = auth.createUserWithEmailAndPassword(email, pass)
+    .then(function(){
+    verify()
+    promise.catch(e => console.log(e.message));  
+  })
+}
+
+function verify (){
+  let user = firebase.auth().currentUser;
+  user.sendEmailVerification().then(function() {
+    console.log("enviando correo");
+    // Email sent.
+  }).catch(function(error) {
+    console.log("error")
+    // An error happened.
+  });
+
+}
+
+}
+
+
+
+
+
+/*export const auth = () =>{
+ 
   (function() {
 
     // Obtener elementos
-    const txtUser = document.getElementById('txtUser');
-    const txtEmail = document.getElementById('txtEmail');
-    const txtPassword = document.getElementById('txtPassword');
-
-    const btnLogin = document.getElementById('btnLogin');
-    const btnSignUp = document.getElementById('btnSignUp');
-    const btnLogout = document.getElementById('btnLogout');
 
     // LOGIN EVENT
-    btnLogin.addEventListener('click', e => {
+    /*btnLogin.addEventListener('click', e => {
       //Obtener email y pass
       const email = txtEmail.value;
       const pass = txtPassword.value;
@@ -24,18 +49,7 @@ export const auth = () =>{
     });
 
     // REGISTRER EVENT
-    btnSignUp.addEventListener('click', e => {
-      // Obtener email y pass
-      // TODO: comprobar que el email sea real
-      const userName = txtUser.value;
-      const email = txtEmail.value;
-      const pass = txtPassword.value;
-      const auth = firebase.auth();
-
-      // CREATE A NEW ACCOUNT // PASS AND EMAIL ADDRESS 
-      const promise = auth.createUserWithEmailAndPassword(email, pass)
-      .then(function(){
-        verify()
+     
 
         var user = firebase.auth().currentUser;
 
@@ -48,7 +62,7 @@ export const auth = () =>{
         });
 
       })
-     promise.catch(e => console.log(e.message));
+     
 
     });
 
@@ -72,21 +86,4 @@ export const auth = () =>{
         document.getElementById('show-msg').innerHTML = ' ' 
       }    
     });
-
-
-    //SEND A USER VERIFICATION EMAIL
-    function verify (){
-    let user = firebase.auth().currentUser;
-    user.sendEmailVerification().then(function() {
-      console.log("enviando correo");
-      // Email sent.
-    }).catch(function(error) {
-      console.log("error")
-      // An error happened.
-    });
-
-
-  }
-
-  } ());
-}
+*/

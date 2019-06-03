@@ -13,19 +13,17 @@ describe('validateNewUser',()=>{
   it('deberia retornar false si el usuario no completa los campos de registro',()=>{
     expect(validateNewUser ('','','')).toBe(false);
   })
-    
-})
-
-describe('passwordLength',() =>{
+  
   it('debería retornar true si la contraseña tiene 6 o más caracteres',()=>{
-    expect(passwordLength('mypass')).toBe(true);
+    expect(passwordLength('Lisa','lisa.simpson@gmail.com','mypass')).toBe(true);
   })
  
   it('debería retornar false si la contraseña tiene 6 o más caracteres',()=>{
-    expect(passwordLength('pass')).toBe(false);
+    expect(passwordLength('Lisa','lisa.simpson@gmail.com','pass')).toBe(false);
   })
 
 })
+
 
 
 describe('validateEmail',()=>{

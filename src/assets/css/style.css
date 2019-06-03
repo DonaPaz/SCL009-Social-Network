@@ -51,7 +51,7 @@ body {
     background-color: #ddd;
     color: black;
   }
-   #txtUser, #txtEmail, #txtPassword{
+   #txt-user, #txt-email, #txt-password{
     background-color: #CAFE1E;
     margin: 1rem;
     padding-left: 1.5rem;

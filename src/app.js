@@ -1,11 +1,12 @@
 import { firebaseInit } from './assets/js/firebaseInit.js';
 import { initRouter } from './route.js';
-import { auth } from './assets/js/auth.js';
+import { registerUser } from './assets/js/auth.js';
 
 const init = () => {
   firebaseInit();
   initRouter();
-  auth();
+  registerUser();
+  //llamar al observador (función)
 }
 
 window.addEventListener('load', init);

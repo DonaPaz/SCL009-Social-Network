@@ -1,20 +1,14 @@
 //VALIDACIÓN REGISTRO NUEVO USUARIO NO ESTÉ VACÍO 
+// VALIDACIÓN LARGO DE CLAVE
+
 export const validateNewUser = (name, email, password) => {
-  if (name === '' || email === '' || password === '') {
+  if (name === '' || email === '' || password === '' || password.length < 6) {
    	return false;
   }
 
   return true;
 }
 
-// VALIDACIÓN LARGO DE CLAVE
-export const passwordLength = (password) => {
-  if (password.length < 6) {
-    return false;
-  }
-  
-  return true;
-}
 
 //VALIDACION EXPRESION REGULAR DE EMAIL
 export const validateEmail = (email) => {

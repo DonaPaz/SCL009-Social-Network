@@ -1,4 +1,3 @@
-
 import { themeRegister } from './themeRegister.js';
 import { themeSignIn } from './themeSignIn.js';
 
@@ -7,10 +6,11 @@ export const themeHome = () => {
   
   document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">
                                                  <a id="btn-signin">Iniciar sesión</a>`
+
   document.getElementById('content').innerHTML = `<h1>Encuentra amigos</h1>
-                                     <div class=register-text>                                             
-                                          <h5> Bienvenido a MyChingu donde podras compartir todo
-                                                sobre tus Bias y hacer amigos </h5>
+    <div class=register-text>                                             
+    <h5> Bienvenido a MyChingu donde podras compartir todo
+    sobre tus Bias y hacer amigos </h5>
                                       </div>
                                               <button id="btn-register">Registrarse</button>
                                               
@@ -44,15 +44,15 @@ export const themeHome = () => {
  x.addListener(myFunction) // Attach listener function on state changes
 
 
-
-
-
   document.getElementById('btn-signin').addEventListener('click', () => {
     themeSignIn();
     window.location.hash = '#/signin';
   })
+
   document.getElementById('btn-register').addEventListener('click', () => {
     themeRegister();
     window.location.hash = '#/register';
   })
+
+  
 }
