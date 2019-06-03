@@ -7,12 +7,12 @@ export const auth = () =>{
     const txtEmail = document.getElementById('txtEmail');
     const txtPassword = document.getElementById('txtPassword');
     
-    const btnLogin = document.getElementById('btnLogin');
+   // const btnLogin = document.getElementById('btnLogin');
     const btnSignUp = document.getElementById('btnSignUp');
     const btnLogout = document.getElementById('btnLogout');
   
     // LOGIN EVENT
-    btnLogin.addEventListener('click', e => {
+    /*btnLogin.addEventListener('click', e => {
       //Obtener email y pass
       const email = txtEmail.value;
       const pass = txtPassword.value;
@@ -21,7 +21,7 @@ export const auth = () =>{
       // LOGIN // PASS AND EMAIL ADDRESS 
       const promise = auth.signInWithEmailAndPassword(email, pass);
       promise.catch(e => console.log(e.message));   
-    });
+    });*/
   
     // REGISTRER EVENT
     btnSignUp.addEventListener('click', e => {
@@ -48,7 +48,7 @@ export const auth = () =>{
         });
       
       })
-     promise.catch(e => console.log(e.message));
+     promise.catch(e => alert(e.message));
      
     });
   
