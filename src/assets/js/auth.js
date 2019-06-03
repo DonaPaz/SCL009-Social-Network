@@ -1,28 +1,28 @@
 export const auth = () =>{
 
-(function() {
-  
+  (function() {
+
     // Obtener elementos
     const txtUser = document.getElementById('txtUser');
     const txtEmail = document.getElementById('txtEmail');
     const txtPassword = document.getElementById('txtPassword');
-    
-   // const btnLogin = document.getElementById('btnLogin');
+
+    const btnLogin = document.getElementById('btnLogin');
     const btnSignUp = document.getElementById('btnSignUp');
     const btnLogout = document.getElementById('btnLogout');
-  
+
     // LOGIN EVENT
-    /*btnLogin.addEventListener('click', e => {
+    btnLogin.addEventListener('click', e => {
       //Obtener email y pass
       const email = txtEmail.value;
       const pass = txtPassword.value;
       const auth = firebase.auth();
-      
+
       // LOGIN // PASS AND EMAIL ADDRESS 
       const promise = auth.signInWithEmailAndPassword(email, pass);
       promise.catch(e => console.log(e.message));   
-    });*/
-  
+    });
+
     // REGISTRER EVENT
     btnSignUp.addEventListener('click', e => {
       // Obtener email y pass
@@ -31,7 +31,7 @@ export const auth = () =>{
       const email = txtEmail.value;
       const pass = txtPassword.value;
       const auth = firebase.auth();
-      
+
       // CREATE A NEW ACCOUNT // PASS AND EMAIL ADDRESS 
       const promise = auth.createUserWithEmailAndPassword(email, pass)
       .then(function(){
@@ -46,24 +46,24 @@ export const auth = () =>{
         }).catch(function(error) {
         // An error happened.
         });
-      
+
       })
-     promise.catch(e => alert(e.message));
-     
+     promise.catch(e => console.log(e.message));
+
     });
-  
+
 
     btnLogout.addEventListener('click', e => {
       firebase.auth().signOut();
     });
-  
+
 
     // Añadir un listener en tiempo real
      firebase.auth().onAuthStateChanged( firebaseUser => {
       if(firebaseUser) {
         console.log(firebaseUser);
         btnLogout.style.display='inline';
-        
+
         document.getElementById("show-msg").innerHTML = firebaseUser.displayName;
 
       } else {
@@ -84,7 +84,7 @@ export const auth = () =>{
       console.log("error")
       // An error happened.
     });
-    
+
 
   }
 

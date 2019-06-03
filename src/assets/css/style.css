@@ -1,0 +1,117 @@
+
+
+* {box-sizing: border-box;}
+body { 
+    margin: 0;
+    
+  }
+  #content{
+    margin-top:6.5rem;
+    font-family: Coolvetica;
+    font-style: normal;
+    
+    text-align: center;
+  }
+#navbar {
+    overflow: hidden;
+    background-color: #03A6BE;
+    padding: 20px 10px;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+  }
+  #btn-signin{
+    background-color: #68CACD;
+    font-family: Coolvetica;
+    font-style: normal;
+    
+  }
+  #navbar a {
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+   
+  }
+ /* #logo{
+    max-width: 100%;
+  height: auto;
+  }*/
+  #navbar #logo {
+    transition: 0.4s;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+   #txtUser, #txtEmail, #txtPassword{
+    background-color: #CAFE1E;
+    margin: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 0px;
+    text-align: center;
+   }
+ #btn-init-google{
+    background-color: #DF5039;
+    margin: 1rem;
+   padding: 0.5rem;
+   padding-left: 3rem;
+   padding-right: 3rem;
+   border-radius: 0.5rem;
+    border-width: 0px;
+    font-family: Coolvetica;
+    font-size: 1.3rem;
+
+ }
+  #btn-preferences, #btn-register,#btn-enter,#btn-dashboard{
+    background-color: #F13A64;
+    margin: 1rem;
+   padding: 1rem;
+   padding-left: 2rem;
+   padding-right: 2rem;
+   border-radius: 0.5rem;
+    border-width: 0px;
+    font-family: Coolvetica;
+    font-size: 1.3rem;
+  }
+ h1{
+     color: white;
+     font-size: 3rem;
+ }
+ h2{
+    font-size: 3rem;
+ }
+ h5{
+    color: white;
+    font-size: 1.5rem;
+ }
+ .register-text{
+     width: 95%;
+     text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+ }
+#title-preferences p {
+    color: white;
+    font-size: 3rem;
+}
+
+#companies p, #artist p{
+    color: white;
+    font-size: 2rem;
+    margin: 0.5rem;
+}
+#companies {
+    margin-top: -2rem;
+}
