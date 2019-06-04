@@ -1,6 +1,6 @@
 import { registerUser } from '../js/auth.js';
-import { validateEmail} from '../js/validator.js'
-
+import { validateEmail} from '../js/validator.js';
+import{singInGoogle} from '../js/auth.js';
 import { themePreferences } from './themePreferences.js';
 
 
@@ -19,7 +19,9 @@ export const themeRegister = () => {
                          <button id = "btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
                          <button id ="btn-preferences"  href="#preferences" class="btn btn-secondary">Enviar</button><br>`
 
- 
+ document.getElementById('btn-init-google').addEventListener('click',()=>{
+  singInGoogle();
+ })
  document.getElementById('btn-preferences').addEventListener('click', () =>{
    let txtUser = document.getElementById('txt-user').value;
    let txtEmail = document.getElementById('txt-email').value;
