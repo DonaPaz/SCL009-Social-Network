@@ -2,12 +2,15 @@ import { registerUser } from '../js/auth.js';
 import { validateEmail} from '../js/validator.js';
 import{singInGoogle} from '../js/auth.js';
 import { themePreferences } from './themePreferences.js';
+import { themeSignIn } from './themeSignIn.js';
 
 
 export const themeRegister = () => {
   //Acá se muestra input nombre, contraseña, correo. botón enviar y botón ingresar con google
   document.body.style.background="";
-  document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">`
+  document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">
+                                                  <a id="btn-signin">Iniciar sesión</a>`
+  
   
   document.getElementById('content').innerHTML = `<h2>Regístrate</h2>
                          <input id="txt-user" type="text" placeholder="nombre"><br>
@@ -19,7 +22,14 @@ export const themeRegister = () => {
                          <button id = "btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
                          <button id ="btn-preferences"  href="#preferences" class="btn btn-secondary">Enviar</button><br>`
 
- document.getElementById('btn-init-google').addEventListener('click',()=>{
+
+ document.getElementById('btn-signin').addEventListener('click', () => {
+   themeSignIn();
+   window.location.hash = '#/signin';
+})
+
+
+  document.getElementById('btn-init-google').addEventListener('click',()=>{
   singInGoogle();
  })
  document.getElementById('btn-preferences').addEventListener('click', () =>{
@@ -42,6 +52,14 @@ export const themeRegister = () => {
     document.getElementById('alert-txt-email').textContent=" "
   }
   
+  if ( !validateEmail(txtEmail)){
+    document.getElementById('alert-txt-email').textContent="Debes ingresar un email valido"
+   }else{
+    document.getElementById('alert-txt-email').textContent=" "
+  }
+
+
+  
   if (txtPassword ===''){
     document.getElementById('alert-txt-password').textContent="Debes ingresar una contraseña"
   
@@ -52,7 +70,7 @@ export const themeRegister = () => {
     document.getElementById('alert-txt-password').textContent=" "
   }
 
-  if (txtUser==='' || txtEmail==='' || txtPassword==='' || txtPassword.length <6){
+  if (txtUser==='' || txtEmail==='' || txtPassword==='' || txtPassword.length <6 ||  !validateEmail(txtEmail)){
     window.location.hash = '#/register';
   } else{
     registerUser(txtUser,txtEmail,txtPassword)
@@ -85,8 +103,10 @@ export const themeRegister = () => {
  function myFunction(x) {
    if (x.matches) { // If media query matches
      document.getElementById("logo").style.width = "10rem";
+     document.body.style.background="";
    } else {
     document.getElementById("logo").style.width = "12rem";
+    document.body.style.background="";
    }
  }
  

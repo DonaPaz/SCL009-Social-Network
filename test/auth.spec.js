@@ -1,4 +1,4 @@
-import { validateNewUser, validateEmail, validatePassLength } from '../src/assets/js/validator.js';
+import { validateNewUser, validateEmail, validatePassLength,validateSignInUser } from '../src/assets/js/validator.js';
 
 
 describe('validateNewUser',()=>{
@@ -15,6 +15,22 @@ describe('validateNewUser',()=>{
   })
   
 })
+
+describe('validateSignInUser',()=>{
+ 
+   it('deberia retornar true si el usuario ingresa todos los campos',()=>{
+    expect(validateSignInUser ('lisa.simpson@gmail.com','mypass')).toBe(true);
+  })
+  
+  it('deberia retornar false si el usuario no completa los campos de registro',()=>{
+    expect(validateSignInUser ('','')).toBe(false);
+  })
+  
+})
+
+
+
+
 
 
 describe('validatePassLength', ()=>{
