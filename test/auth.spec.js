@@ -1,4 +1,4 @@
-import { validateNewUser, validateEmail, passwordLength } from '../src/assets/js/validator.js';
+import { validateNewUser, validateEmail, validatePassLength } from '../src/assets/js/validator.js';
 
 
 describe('validateNewUser',()=>{
@@ -14,17 +14,20 @@ describe('validateNewUser',()=>{
     expect(validateNewUser ('','','')).toBe(false);
   })
   
-  it('debería retornar true si la contraseña tiene 6 o más caracteres',()=>{
-    expect(passwordLength('Lisa','lisa.simpson@gmail.com','mypass')).toBe(true);
-  })
- 
-  it('debería retornar false si la contraseña tiene 6 o más caracteres',()=>{
-    expect(passwordLength('Lisa','lisa.simpson@gmail.com','pass')).toBe(false);
-  })
-
 })
 
 
+describe('validatePassLength', ()=>{
+
+  it('debería retornar true si la contraseña tiene 6 o más caracteres',()=>{
+    expect(validatePassLength('mypass')).toBe(true);
+  })
+ 
+  it('debería retornar false si la contraseña tiene 6 o más caracteres',()=>{
+    expect(validatePassLength('pass')).toBe(false);
+  })
+
+})
 
 describe('validateEmail',()=>{
   it('deberia retornar false, si el correo es invalido',()=>{

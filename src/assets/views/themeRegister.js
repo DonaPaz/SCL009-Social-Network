@@ -11,13 +11,13 @@ export const themeRegister = () => {
   
   document.getElementById('content').innerHTML = `<h2>Regístrate</h2>
                          <input id="txt-user" type="text" placeholder="nombre"><br>
-                         <p id="alert-txt-user></p>
+                         <p id="alert-txt-user"></p>
                          <input id="txt-email" type="email" placeholder="email"><br>
-                         <p id="alert-txt-email></p>
+                         <p id="alert-txt-email"></p>
                          <input id="txt-password" type="password" placeholder="contraseña"><br>
-                         <p id="alert-txt-password></p>
-                       <button id = "btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
-                       <button id ="btn-preferences"  href="#preferences" class="btn btn-secondary">Enviar</button><br>`
+                         <p id="alert-txt-password"></p>
+                         <button id = "btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
+                         <button id ="btn-preferences"  href="#preferences" class="btn btn-secondary">Enviar</button><br>`
 
  
  document.getElementById('btn-preferences').addEventListener('click', () =>{
@@ -25,25 +25,40 @@ export const themeRegister = () => {
    let txtEmail = document.getElementById('txt-email').value;
    let txtPassword = document.getElementById('txt-password').value;
 
+   
+   // 
    if (txtUser===''){
      document.getElementById('alert-txt-user').textContent="Debes ingresar un nombre"
+     window.location.hash = '#/register'
    }else{
     document.getElementById('alert-txt-user').textContent=" "
    }
 
    if (txtEmail==='' || !validateEmail(txtEmail)){
     document.getElementById('alert-txt-email').textContent="Debes ingresar un email"
-  }else{
+   }else{
     document.getElementById('alert-txt-email').textContent=" "
   }
   
-  if (txtPassword==='' || textPassword.length<6){
+  if (txtPassword ===''){
     document.getElementById('alert-txt-password').textContent="Debes ingresar una contraseña"
-  }else{
+  
+  } else if (txtPassword.length <6){
+    document.getElementById('alert-txt-password').textContent="Debes ingresar una contraseña de 6 caracteres"
+  }
+  else{
     document.getElementById('alert-txt-password').textContent=" "
   }
 
-  registerUser(txtUser,txtEmail,txtPassword)
+  if (txtUser==='' || txtEmail==='' || txtPassword==='' || txtPassword.length <6){
+    window.location.hash = '#/register';
+  } else{
+    registerUser(txtUser,txtEmail,txtPassword)
+    themePreferences();
+  }
+  
+    
+  
 
  })
  
@@ -79,16 +94,11 @@ export const themeRegister = () => {
 
  
  
- 
- 
- 
- 
- 
-  document.getElementById('btn-preferences').addEventListener('click', () => {
+ /* document.getElementById('btn-preferences').addEventListener('click', () => {
     // llamar a la función que carga el theme project
     // cambiar el hash a #/project
     themePreferences();
     auth();
     window.location.hash = '#/preferences';
-  })
+  })*/
 }

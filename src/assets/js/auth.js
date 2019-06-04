@@ -1,15 +1,18 @@
 import { validateNewUser } from '../js/validator.js'
+//import { themeRegister } from '../js/validator.js'
 
-export const registerUser = (name, email, password) => {
+export const registerUser = (txtName, txtEmail, txtPassword) => {
 
-  if (validateNewUser(name, email, password)) {
+  if (validateNewUser(txtName, txtEmail, txtPassword)) {
     alert("El usuario fue creado exitosamente");
     const auth = firebase.auth();
-    const promise = auth.createUserWithEmailAndPassword(email, pass)
+    const promise = auth.createUserWithEmailAndPassword(txtEmail, txtPassword)
     .then(function(){
     verify()
     promise.catch(e => console.log(e.message));  
+    
   })
+  //themeRegister();
 }
 
 function verify (){
@@ -23,6 +26,7 @@ function verify (){
   });
 
 }
+
 
 }
 
