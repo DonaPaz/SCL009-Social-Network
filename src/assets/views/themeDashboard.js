@@ -1,9 +1,12 @@
 import { themeProfile } from './themeProfile.js';
-
+import { observer } from '../js/auth.js';
 export const themeDashboard = () => {
+ 
   //Acá se muestra input nombre, contraseña, correo. botón enviar y botón ingresar con google
   document.body.style.background="#EA77A6";
-  document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">`
+  document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">
+                                                    
+  `
   document.getElementById('content').innerHTML = `<p>Tu muro</p>
                                               <button id="btn-profile">Ir al perfil</button>`
 

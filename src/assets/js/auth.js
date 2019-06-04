@@ -1,4 +1,4 @@
-import { validateNewUser } from '../js/validator.js'
+import { validateNewUser,validateSignInUser } from '../js/validator.js'
 //import { themeRegister } from '../js/validator.js'
 
 export const registerUser = (txtName, txtEmail, txtPassword) => {
@@ -14,7 +14,6 @@ export const registerUser = (txtName, txtEmail, txtPassword) => {
   })
   //themeRegister();
 }
-
 
 
 function verify (){
@@ -54,10 +53,30 @@ export const singInGoogle =() =>{
 
 }
 
+export const signInUser = (txtEmail,txtPassword) => {
+  if (validateSignInUser(txtEmail,txtPassword)){
+    
+    const auth = firebase.auth();
+    const promise = auth.signInWithEmailAndPassword(txtEmail, txtPassword)
+    .then(function(){
+    
+    promise.catch(e => console.log(e.message));  
+    
+
+  })
+}}
+
+
+
+
+
+
 export const observer =() =>{
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
+      console.log(user);
+      console.log("usuario logueado")
       var displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
@@ -69,8 +88,8 @@ export const observer =() =>{
     } else {
       // User is signed out.
       // ...
-      console.log("no esta registrado")
-      window.location.hash="";
+      console.log("no esta registrado");
+      window.location.hash = '#/home';
     }
   });
 

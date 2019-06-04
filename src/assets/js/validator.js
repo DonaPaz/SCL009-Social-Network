@@ -9,6 +9,18 @@ export const validateNewUser = (txtName, txtEmail, txtPassword) => {
   return true;
 }
 
+export const validateSignInUser = (txtEmail,txtPassword) =>{
+if (txtEmail=== "" || txtPassword ===""){
+  return false;
+}
+ return true;
+}
+
+
+
+
+
+
 export const validatePassLength = (txtPassword) => {
   if (txtPassword.length < 6) {
     return false;

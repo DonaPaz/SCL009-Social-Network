@@ -1,5 +1,6 @@
 import { themeDashboard } from './themeDashboard.js';
-
+import{signInUser} from '../js/auth.js';
+import { validateEmail} from '../js/validator.js';
 
 export const themeSignIn = () => {
   //Acá se muestra input correo, input contraseña, botón ingresar y botón ingresar con google
@@ -10,7 +11,9 @@ export const themeSignIn = () => {
   document.getElementById('content').innerHTML = ` <h2>Iniciar sesión</h2>
                   
                                   <input id="txt-email" type="email" placeholder="email"><br>
+                                  <p id="alert-txt-email"></p>
                                   <input id="txt-password" type="email" placeholder="contraseña"><br>
+                                  <p id="alert-txt-password"></p>
 
                      <button id = "btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
                      <button id="btn-enter">Entrar</button>`
@@ -32,8 +35,11 @@ export const themeSignIn = () => {
  function myFunction(x) {
    if (x.matches) { // If media query matches
      document.getElementById("logo").style.width = "10rem";
+     document.body.style.background="";
+     
    } else {
     document.getElementById("logo").style.width = "12rem";
+    document.body.style.background="";
    }
  }
  
@@ -45,8 +51,44 @@ export const themeSignIn = () => {
  
  
  
-                     document.getElementById('btn-enter').addEventListener('click', () => {
-    themeDashboard();
-    window.location.hash = '#/dashboard';
+   document.getElementById('btn-enter').addEventListener('click', () => {
+   
+   let txtEmail = document.getElementById('txt-email').value;
+  let txtPassword = document.getElementById('txt-password').value;
+
+
+ if (txtEmail==='' || !validateEmail(txtEmail)){
+ document.getElementById('alert-txt-email').textContent="Debes ingresar un email"
+ }else{
+    document.getElementById('alert-txt-email').textContent=" "
+ }
+ if (txtEmail==='' || !validateEmail(txtEmail)){
+  document.getElementById('alert-txt-email').textContent="Debes ingresar un email"
+ }else{
+  document.getElementById('alert-txt-email').textContent=" "
+}
+
+
+ if (txtPassword ===''){
+ document.getElementById('alert-txt-password').textContent="Debes ingresar una contraseña"
+                      
+ } else if (txtPassword.length <6){
+   document.getElementById('alert-txt-password').textContent="Debes ingresar una contraseña de 6 caracteres"
+  }
+  else{
+   document.getElementById('alert-txt-password').textContent=" "
+ }
+                    
+   if ( txtEmail==='' || txtPassword==='' || txtPassword.length <6 || !validateEmail(txtEmail)){
+    window.location.hash = '#/signin';
+ } else{
+  signInUser(txtEmail,txtPassword);   
+  window.location.hash = '#/dashboard';     
+                      }
+                      
+                        
+                      
+
+
   })
 }
