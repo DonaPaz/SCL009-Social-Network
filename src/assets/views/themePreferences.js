@@ -54,9 +54,6 @@ export const themePreferences = () => {
  x.addListener(myFunction) // Attach listener function on state changes
 
 
-
-
-
   document.getElementById('btn-dashboard').addEventListener('click', () => {
     // llamar a la función que carga el theme project
     // cambiar el hash a #/project

@@ -1,6 +1,6 @@
 import { registerUser } from '../js/auth.js';
 import { validateEmail} from '../js/validator.js';
-import{singInGoogle} from '../js/auth.js';
+import { singInGoogle } from '../js/auth.js';
 import { themePreferences } from './themePreferences.js';
 import { themeSignIn } from './themeSignIn.js';
 
@@ -114,13 +114,4 @@ export const themeRegister = () => {
  myFunction(x) // Call listener function at run time
  x.addListener(myFunction) // Attach listener function on state changes
 
- 
- 
- /* document.getElementById('btn-preferences').addEventListener('click', () => {
-    // llamar a la función que carga el theme project
-    // cambiar el hash a #/project
-    themePreferences();
-    auth();
-    window.location.hash = '#/preferences';
-  })*/
 }

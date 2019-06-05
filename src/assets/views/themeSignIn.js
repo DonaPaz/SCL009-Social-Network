@@ -2,7 +2,9 @@ import { themeDashboard } from './themeDashboard.js';
 import { signInUser } from '../js/auth.js';
 import { validateEmail} from '../js/validator.js';
 
+
 export const themeSignIn = () => {
+  
   //Acá se muestra input correo, input contraseña, botón ingresar y botón ingresar con google
   document.body.style.background="";
   document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">`
@@ -81,15 +83,16 @@ export const themeSignIn = () => {
                     
    if ( txtEmail==='' || txtPassword==='' || txtPassword.length <6 || !validateEmail(txtEmail)){
     window.location.hash = '#/signin';
+
  } else{
   signInUser(txtEmail,txtPassword);
   themeDashboard();
   window.location.hash = '#/dashboard';     
   }
-                      
-                        
-                      
-
+                               
 
   })
+
+ 
 }
+
