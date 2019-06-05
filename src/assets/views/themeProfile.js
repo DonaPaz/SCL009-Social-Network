@@ -1,7 +1,10 @@
 import { themeDashboard } from './themeDashboard.js';
-import { themeHome } from './themeHome.js';
+//import { themeHome } from './themeHome.js';
+import { observer } from '../js/auth.js';
+import { logOut } from '../js/logout.js';
 
 export const themeProfile = () => {
+  observer();
   //Acá va el muro
   document.getElementById('content').innerHTML = `<p>Tu muro</p>
                                               <button id="btn-dashboard">Volver al muro</button>
@@ -14,7 +17,6 @@ export const themeProfile = () => {
   })
   document.getElementById('btn-logout').addEventListener('click', () => {
     //Acá cerrar sesión del user
-    themeHome()
-    window.location.hash = '#/home';
+    logOut();
   })
 }
