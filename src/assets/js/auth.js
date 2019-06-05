@@ -1,5 +1,6 @@
 import { validateNewUser,validateSignInUser } from '../js/validator.js'
 //import { themeRegister } from '../js/validator.js'
+import { themeHome } from '../views/themeHome.js';
 
 export const registerUser = (txtName, txtEmail, txtPassword) => {
 
@@ -66,11 +67,31 @@ export const signInUser = (txtEmail,txtPassword) => {
   })
 }}
 
+export const observer = () => {
+  let user = firebase.auth().currentUser;
 
+  if (user != null) {
+    // User is signed in.
+    console.log(user);
+    // console.log("usuario logueado")
+    // var displayName = user.displayName;
+    // var email = user.email;
+    // var emailVerified = user.emailVerified;
+    // var photoURL = user.photoURL;
+    // var isAnonymous = user.isAnonymous;
+    // var uid = user.uid;
+    // var providerData = user.providerData;
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+    console.log("no esta registrado");
+    themeHome();
+    window.location.hash = '#/home';
+  }
+}
 
-
-
-
+/*
 export const observer =() =>{
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -92,9 +113,7 @@ export const observer =() =>{
       window.location.hash = '#/home';
     }
   });
-
-
-}
+*/
 
 
 

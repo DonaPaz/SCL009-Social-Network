@@ -1,5 +1,5 @@
 import { themeDashboard } from './themeDashboard.js';
-import{signInUser} from '../js/auth.js';
+import { signInUser } from '../js/auth.js';
 import { validateEmail} from '../js/validator.js';
 
 export const themeSignIn = () => {
@@ -12,7 +12,7 @@ export const themeSignIn = () => {
                   
                                   <input id="txt-email" type="email" placeholder="email"><br>
                                   <p id="alert-txt-email"></p>
-                                  <input id="txt-password" type="email" placeholder="contraseña"><br>
+                                  <input id="txt-password" type="password" placeholder="contraseña"><br>
                                   <p id="alert-txt-password"></p>
 
                      <button id = "btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
@@ -82,9 +82,10 @@ export const themeSignIn = () => {
    if ( txtEmail==='' || txtPassword==='' || txtPassword.length <6 || !validateEmail(txtEmail)){
     window.location.hash = '#/signin';
  } else{
-  signInUser(txtEmail,txtPassword);   
+  signInUser(txtEmail,txtPassword);
+  themeDashboard();
   window.location.hash = '#/dashboard';     
-                      }
+  }
                       
                         
                       

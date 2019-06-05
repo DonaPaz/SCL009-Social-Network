@@ -3,6 +3,7 @@ import { observer } from '../js/auth.js';
 
 export const themePreferences = () => {
  
+  observer();
   //Acá se muestra input nombre, contraseña, correo. botón enviar y botón ingresar con google
   document.body.style.background="";
   document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">`
