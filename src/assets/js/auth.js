@@ -1,4 +1,5 @@
 import { validateNewUser,validateSignInUser } from '../js/validator.js'
+import { themeHome } from '../views/themeHome.js';
 
 export const registerUser = (txtName, txtEmail, txtPassword) => {
 
@@ -70,9 +71,21 @@ export const observer = () => {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log('user ok')
+      
     } else {
-      console.log('not current user')// No user is signed in.
+     
+      window.onhashchange ="";
+      themeHome();
+      //console.log('not current user')// No user is signed in.
     }
   });
+
+/*  let user = firebase.auth().currentUser;
+
+  if (user) {
+  // User is signed in.
+  } else {
+    window.location.hash = '#/home';
+  }*/
 
 }
