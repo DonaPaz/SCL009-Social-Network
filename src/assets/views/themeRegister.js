@@ -3,6 +3,7 @@ import { validateEmail} from '../js/validator.js';
 import { singInGoogle } from '../js/auth.js';
 import { themePreferences } from './themePreferences.js';
 import { themeSignIn } from './themeSignIn.js';
+import { eye } from '../js/lib.js';
 
 
 export const themeRegister = () => {
@@ -17,11 +18,14 @@ export const themeRegister = () => {
                          <p id="alert-txt-user"></p>
                          <input id="txt-email" type="email" placeholder="email"><br>
                          <p id="alert-txt-email"></p>
-                         <input id="txt-password" type="password" placeholder="contraseña"><br>
+                         <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><img id="eye_icon" width="15" src="../img/eye.svg" alt="Oculto"></button><br>
                          <p id="alert-txt-password"></p>
                          <button id = "btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
                          <button id ="btn-preferences"  href="#preferences" class="btn btn-secondary">Enviar</button><br>`
 
+  document.getElementById('eye_btn').addEventListener('click', () => {
+    eye();
+  })
 
  document.getElementById('btn-signin').addEventListener('click', () => {
    themeSignIn();
