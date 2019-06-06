@@ -1,6 +1,7 @@
 import { themeDashboard } from './themeDashboard.js';
 import { signInUser } from '../js/auth.js';
 import { validateEmail} from '../js/validator.js';
+import { eye } from '../js/lib.js';
 
 
 export const themeSignIn = () => {
@@ -14,12 +15,14 @@ export const themeSignIn = () => {
                   
                                   <input id="txt-email" type="email" placeholder="email"><br>
                                   <p id="alert-txt-email"></p>
-                                  <input id="txt-password" type="password" placeholder="contraseña"><br>
+                                  <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><img id="eye_icon" width="15" src="../img/eye.svg" alt="Oculto"></button><br>
                                   <p id="alert-txt-password"></p>
-
                      <button id = "btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
                      <button id="btn-enter">Entrar</button>`
-                            
+  
+  document.getElementById('eye_btn').addEventListener('click', () => {
+    eye();
+  })
   //navbar
  // AL BAJAR 80 PX SE ADAPTA EL NAVBAR
  window.onscroll = function() {scrollFunction()};
@@ -49,9 +52,6 @@ export const themeSignIn = () => {
  myFunction(x) // Call listener function at run time
  x.addListener(myFunction) // Attach listener function on state changes
 
- 
- 
- 
  
    document.getElementById('btn-enter').addEventListener('click', () => {
    
