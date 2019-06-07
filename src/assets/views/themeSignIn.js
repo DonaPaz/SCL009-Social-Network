@@ -1,4 +1,4 @@
-import { themeDashboard } from './themeDashboard.js';
+//import { themeDashboard } from './themeDashboard.js';
 import { signInUser } from '../js/auth.js';
 import { validateEmail} from '../js/validator.js';
 import { eye } from '../js/lib.js';
@@ -91,7 +91,14 @@ export const themeSignIn = () => {
                                
 
   })
-
  
 }
 
+export const userNotRegistered = (errorCode) => {
+  if(errorCode = 'auth/invalid-email'){
+  document.getElementById('alert-txt-email').textContent='El correo no está registrado'
+}
+if(errorCode = 'auth/wrong-password'){
+  document.getElementById('alert-txt-password').textContent='La contraseña es incorrecta'
+}
+}

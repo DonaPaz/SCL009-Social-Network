@@ -1,7 +1,8 @@
 import { validateNewUser,validateSignInUser } from '../js/validator.js'
 import { themeHome } from '../views/themeHome.js';
-import { themeSignIn } from '../views/themeSignIn.js';
+import { userNotRegistered } from '../views/themeSignIn.js';
 import { themeDashboard } from '../views/themeDashboard.js';
+
 
 export const registerUser = (txtName, txtEmail, txtPassword) => {
 
@@ -33,14 +34,15 @@ export const registerUser = (txtName, txtEmail, txtPassword) => {
 
 }
 export const singInGoogle =() =>{
-  var provider = new firebase.auth.GoogleAuthProvider();
-  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-  firebase.auth().signInWithPopup(provider).then(function(result) {
+  let provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+  .then(function(result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
+    let token = result.credential.accessToken;
     // The signed-in user info.
-    var user = result.user;
-    // ...
+    let user = result.user;
+    
+    themeDashboard()
     window.location.hash = '#/preferences';
   }).catch(function(error) {
     // Handle Errors here.
@@ -75,21 +77,16 @@ export const signInUser = (txtEmail,txtPassword) => {
         window.location.hash = '#/signin';
       }
 
-      promise.catch((e) => {
-        let errorCode = error.code;
-        let errorMessage = error.message;    
-        
-        if (errorCode === 'auth/wrong-password') {
-          alert('Wrong password.');
-        } else {
-          alert(errorMessage);
-        }
-        console.log(error);
-      });
    
     
     })
-    
+    promise.catch((error) => {
+      let errorCode = error.code;
+      let errorMessage = error.message;    
+      
+     userNotRegistered(errorCode)
+      
+    });
 
 }}
 
