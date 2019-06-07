@@ -12,6 +12,19 @@ export const registerUser = (txtName, txtEmail, txtPassword) => {
     const promise = auth.createUserWithEmailAndPassword(txtEmail, txtPassword)
     .then(function(){
     verify()
+    var db = firebase.firestore();
+    db.collection("users").add({
+      name: txtName,
+      email: txtEmail,
+      password:txtPassword,
+      
+  })
+  .then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
     promise.catch(e => console.log(e.message));  
     
     })

@@ -1,4 +1,6 @@
 import { themeProfile } from './themeProfile.js';
+import { logOut } from '../js/logout.js';
+import { themePreferences } from './themePreferences.js';
 //
 
 
@@ -8,7 +10,14 @@ export const themeDashboard = () => {
   //Acá se muestra input nombre, contraseña, correo. botón enviar y botón ingresar con google
   document.body.style.background="#EA77A6";
   document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">
-                                                    
+  <div class="dropdown">
+  <button id="btn-drop" class="dropbtn">Perfil</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a id="btn-logout">Cerrar sesión</a>
+    <a id="btn-profile">Perfil</a>
+    <a id="btn-preference">favoritos</a>
+  </div>
+</div>              
   `
   document.getElementById('content').innerHTML = `<p>Tu muro</p>
                                               <button id="btn-profile">Ir al perfil</button>`
@@ -48,5 +57,31 @@ document.getElementById('btn-profile').addEventListener('click', () => {
     themeProfile();
     window.location.hash = '#/profile';
   })
+ 
+  document.getElementById('btn-drop').addEventListener('click', () => {
+    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById('btn-logout').addEventListener('click', () => {
+      //Acá cerrar sesión del user
+      logOut();
+    })
+    document.getElementById('btn-preference').addEventListener('click', () => {
+      //Acá cerrar sesión del user
+      themePreferences();
+      window.location.hash = '#/preferences';
+
+    })
+    document.getElementById('btn-profile').addEventListener('click', () => {
+      //Acá cerrar sesión del user
+      themeProfile();
+    window.location.hash = '#/profile';
+
+    })
+ 
+  })
+ 
+ 
+ 
+
+
 
 }
