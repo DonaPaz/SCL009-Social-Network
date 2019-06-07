@@ -1,5 +1,7 @@
 import { validateNewUser,validateSignInUser } from '../js/validator.js'
 import { themeHome } from '../views/themeHome.js';
+import { themeSignIn } from '../views/themeSignIn.js';
+import { themeDashboard } from '../views/themeDashboard.js';
 
 export const registerUser = (txtName, txtEmail, txtPassword) => {
 
@@ -53,18 +55,44 @@ export const singInGoogle =() =>{
 
 }
 
+
+
+
 export const signInUser = (txtEmail,txtPassword) => {
   if (validateSignInUser(txtEmail,txtPassword)){
-    
     const auth = firebase.auth();
     const promise = auth.signInWithEmailAndPassword(txtEmail, txtPassword)
     .then(function(){
+      //themeDashboard()
+      //window.location.hash ='#dashboard'
+
+      let user = firebase.auth().currentUser;
+
+      if (user) {
+       themeDashboard();
+        window.location.hash = '#/dashboard';
+      } else {
+        window.location.hash = '#/signin';
+      }
+
+      promise.catch((e) => {
+        let errorCode = error.code;
+        let errorMessage = error.message;    
+        
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+      });
+   
     
-    promise.catch(e => console.log(e.message));  
+    })
     
 
-  })
 }}
+
 
 export const observer = () => {
 

@@ -86,8 +86,7 @@ export const themeSignIn = () => {
 
  } else{
   signInUser(txtEmail,txtPassword);
-  themeDashboard();
-  window.location.hash = '#/dashboard';     
+  
   }
                                
 

@@ -18,9 +18,6 @@ if (txtEmail=== "" || txtPassword ===""){
 
 
 
-
-
-
 export const validatePassLength = (txtPassword) => {
   if (txtPassword.length < 6) {
     return false;
