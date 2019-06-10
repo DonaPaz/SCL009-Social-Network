@@ -1,6 +1,7 @@
 import { validateNewUser,validateSignInUser } from '../js/validator.js'
 import { themeHome } from '../views/themeHome.js';
 import { userNotRegistered } from '../views/themeSignIn.js';
+import { userAlreadyRegistered } from '../views/themeRegister.js';
 import { themeDashboard } from '../views/themeDashboard.js';
 
 
@@ -21,18 +22,25 @@ export const registerUser = (txtName, txtEmail, txtPassword) => {
   })
   .then(function(docRef) {
       console.log("Document written with ID: ", docRef.id);
+     
   })
   .catch(function(error) {
       console.error("Error adding document: ", error);
-  });
-    promise.catch(e => console.log(e.message));  
+  }) })
+  promise.catch((error) => {
+    let errorCode = error.code;
+    let errorMessage = error.message;    
     
-    })
+   userAlreadyRegistered(errorCode)
+   window.location.hash = '#/register';
+  });
+   
   
-  }
+  }}
 
 
-  function verify (){
+
+function verify (){
     let user = firebase.auth().currentUser;
     user.sendEmailVerification().then(function() {
       console.log("enviando correo");
@@ -45,7 +53,7 @@ export const registerUser = (txtName, txtEmail, txtPassword) => {
  }
 
 
-}
+
 export const singInGoogle =() =>{
   let provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
@@ -80,7 +88,7 @@ export const signInUser = (txtEmail,txtPassword) => {
     .then(function(){
       //themeDashboard()
       //window.location.hash ='#dashboard'
-
+      
       let user = firebase.auth().currentUser;
 
       if (user) {
@@ -103,6 +111,25 @@ export const signInUser = (txtEmail,txtPassword) => {
 
 }}
 
+export const getUser = (email)=> {
+  var db = firebase.firestore();
+  db.collection("users").where("email", "==", email)
+  .get()
+  .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+          // doc.data() is never undefined for query doc snapshots
+          console.log("esta funcion obtiene el nombre del current user desde nuestra base de datos :3")
+          firebase.auth().currentUser.email = doc.data().name;
+          
+      });
+  })
+  .catch(function(error) {
+      console.log("Error getting documents: ", error);
+  });
+}  
+
+
+
 
 export const observer = () => {
 
@@ -117,6 +144,11 @@ export const observer = () => {
       //console.log('not current user')// No user is signed in.
     }
   });
+
+ 
+
+
+
 
 /*  let user = firebase.auth().currentUser;
 
