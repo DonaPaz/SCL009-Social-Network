@@ -119,3 +119,10 @@ export const themeRegister = () => {
  x.addListener(myFunction) // Attach listener function on state changes
 
 }
+
+export const userAlreadyRegistered = (errorCode) => {
+  if(errorCode = 'auth/email-already-in-use'){
+  document.getElementById('alert-txt-email').textContent='El correo ya ha sido registrado'
+}
+
+}
