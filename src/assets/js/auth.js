@@ -111,6 +111,7 @@ export const savePost = () => {
   db.collection("posts").add({
   post: document.getElementById('user-txt').value,
   userId: firebase.auth().currentUser.uid,
+  time: new Date()
 })
 .then(function(docRef) {
   console.log("Document written with ID: ", docRef.id);
@@ -120,7 +121,7 @@ export const savePost = () => {
 });
 };
 //Function to get the posts from Firestore
-export const getPost = () => {
+/* export const getPost = () => {
   var db = firebase.firestore()
     db.collection("posts").get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
@@ -129,25 +130,22 @@ export const getPost = () => {
         //console.log(doc.data())
         toConect(doc)
     });
-});
-
-  /* var db = firebase.firestore();
+}); */
+export const getPost = () => {
+  var db = firebase.firestore();
   db.collection("posts").where("userId", "==", firebase.auth().currentUser.uid)
   .get()
   .then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
       // doc.data() is never undefined for query doc snapshots
-      //console.log(doc.id, " => ", doc.data());
-      //console.log(doc.id)
+      //console.log(doc.id);
       //console.log(doc.data())
-      return doc.id
+      toConect(doc)
     });
-    prueba(querySnapshot)
   })
   .catch(function(error) {
     console.log("Error getting documents: ", error);
-  }); */
-
+  });
 };
 //Function to know if there's an user loggedIn
 export const observer = () => {
