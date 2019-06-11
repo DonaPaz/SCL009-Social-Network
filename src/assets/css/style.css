@@ -8,6 +8,9 @@ body {
 textarea#user-txt {
   resize: none;
 }
+div.postContainer {
+  background-color: #ffe0f7;
+}
   #content{
     margin-top:6.5rem;
     font-family: Coolvetica;

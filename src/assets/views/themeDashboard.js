@@ -4,7 +4,14 @@ import { themePreferences } from './themePreferences.js';
 import { savePost, getPost } from '../js/auth.js'
 
 export const toConect = (doc) => {
-  console.log(doc.data())
+  //console.log(doc.data())
+  let postsContainer = document.getElementById('postsContainer');
+  let postContainer = document.createElement('div');
+  postContainer.classList.add('postContainer');
+  let postTxt = document.createElement('p');
+  postTxt.innerHTML = doc.data().post;
+  postContainer.appendChild(postTxt);
+  postsContainer.appendChild(postContainer);
 }
 //Creating daashboard template. Here the user should be able to write a post and see it
 export const themeDashboard = () => {
@@ -23,25 +30,17 @@ export const themeDashboard = () => {
                                                   <div id="post-header">
                                                     <p>Nombre user</p>
                                                   </div>
-                                                  <div id=post-content>
+                                                  <div id="post-content">
                                                     <textarea id="user-txt" rows="4" cols="40" placeholder="Escribe aquí"></textarea>
                                                   </div>
                                                   <button id="send-btn">Enviar</button>
                                                   <h6>Todos los posts</h6>
-                                                  <div id="posts"></div>
+                                                  <div id="postsContainer"></div>
                                                   <button id="btn-profile">Ir al perfil</button>`
 
   document.getElementById('send-btn').addEventListener('click', () => {
     savePost();
     getPost();
-    algo()
-    document.getElementById('user-txt').textContent = ""
-    let posts = document.getElementById('posts');
-    let postContent = document.createElement('div')
-    let postTxt = document.createElement('p')
-    //postTxt.innerHTML = "'"+doc.data()+"'";
-    postContent.appendChild(postTxt);
-    posts.appendChild(postContent);
   })
 
  //navbar
