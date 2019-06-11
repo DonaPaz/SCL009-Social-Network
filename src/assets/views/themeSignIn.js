@@ -13,7 +13,7 @@ export const themeSignIn = () => {
 
   document.getElementById('content').innerHTML = ` <h2>Iniciar sesión</h2>
                   
-                                  <input id="txt-email" type="email" placeholder="email"><br>
+                                  <input id="txt-email" type="email" placeholder="email">
                                   <p id="alert-txt-email"></p>
                                   <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><img id="eye_icon" width="15" src="../img/eye.svg" alt="Oculto"></button><br>
                                   <p id="alert-txt-password"></p>

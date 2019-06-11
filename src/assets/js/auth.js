@@ -134,9 +134,12 @@ export const savePost = () => {
 export const getPost = () => {
   var db = firebase.firestore();
   db.collection("posts").where("userId", "==", firebase.auth().currentUser.uid)
+
   .get()
   .then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
+      let post=db.collection("posts");
+      post.orderBy("time","desc")
       // doc.data() is never undefined for query doc snapshots
       //console.log(doc.id);
       //console.log(doc.data())

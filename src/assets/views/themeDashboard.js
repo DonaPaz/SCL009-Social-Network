@@ -31,7 +31,7 @@ export const themeDashboard = () => {
                                                     <p>Nombre user</p>
                                                   </div>
                                                   <div id="post-content">
-                                                    <textarea id="user-txt" rows="4" cols="40" placeholder="Escribe aquí"></textarea>
+                                                    <textarea id="user-txt" rows="4" cols="40" placeholder="Escribe algo sobre tu Bias"></textarea>
                                                   </div>
                                                   <button id="send-btn">Enviar</button>
                                                   <h6>Todos los posts</h6>
