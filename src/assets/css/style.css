@@ -1,9 +1,8 @@
 
-
 * {box-sizing: border-box;}
 body { 
     margin: 0;
-    
+    font-family: 'Josefin Sans', sans-serif;
   }
 textarea#user-txt {
   resize: none;
@@ -13,7 +12,7 @@ div.postContainer {
 }
   #content{
     margin-top:6.5rem;
-    font-family: Coolvetica;
+    font-family: 'Josefin Sans', sans-serif;
     font-style: normal;
      text-align: center;
   }
@@ -29,8 +28,7 @@ div.postContainer {
   }
   #btn-signin{
     background-color: #68CACD;
-    font-family: Coolvetica;
-    font-style: normal;
+    font-family: 'Josefin Sans', sans-serif;
     
   }
   #navbar a {
@@ -58,15 +56,34 @@ div.postContainer {
   }
    #txt-user, #txt-email, #txt-password{
     background-color: #CAFE1E;
-    margin: 1rem;
+    margin: 0.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     border-radius: 0.5rem;
     border-width: 0px;
-    text-align: center;
+    text-align: left;
    }
+  
+   #txt-password{
+    margin-left: 2.5rem;
+   }
+#alert-txt-user,#alert-txt-email,#alert-txt-password{
+  margin-top: -0.5rem;
+  color: red;
+  font-size: 0.8rem;
+  font-family: 'Roboto', sans-serif;
+}
+#alert-txt-user{
+  margin-right:3.5rem;
+}
+#alert-txt-email{
+margin-right: 2rem;
+}
+#alert-txt-password{
+  margin-right: 2rem;
+}
  #btn-init-google{
     background-color: #DF5039;
     margin: 1rem;
@@ -87,7 +104,7 @@ div.postContainer {
    padding-right: 2rem;
    border-radius: 0.5rem;
     border-width: 0px;
-    font-family: Coolvetica;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1.3rem;
   }
  h1{
@@ -162,3 +179,4 @@ div.postContainer {
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
