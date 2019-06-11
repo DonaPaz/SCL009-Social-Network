@@ -3,6 +3,9 @@ import { logOut } from '../js/logout.js';
 import { themePreferences } from './themePreferences.js';
 import { savePost, getPost } from '../js/auth.js'
 
+export const toConect = (doc) => {
+  console.log(doc.data())
+}
 //Creating daashboard template. Here the user should be able to write a post and see it
 export const themeDashboard = () => {
   document.body.style.background="#EA77A6";
@@ -31,6 +34,7 @@ export const themeDashboard = () => {
   document.getElementById('send-btn').addEventListener('click', () => {
     savePost();
     getPost();
+    algo()
     document.getElementById('user-txt').textContent = ""
     let posts = document.getElementById('posts');
     let postContent = document.createElement('div')
