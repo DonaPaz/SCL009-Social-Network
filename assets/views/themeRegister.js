@@ -6,6 +6,7 @@ import { themeSignIn } from './themeSignIn.js';
 import { eye } from '../js/lib.js';
 
 
+
 export const themeRegister = () => {
   //Acá se muestra input nombre, contraseña, correo. botón enviar y botón ingresar con google
   document.body.style.background="";
@@ -80,9 +81,6 @@ export const themeRegister = () => {
     registerUser(txtUser,txtEmail,txtPassword)
     themePreferences();
   }
-  
-    
-  
 
  })
  
@@ -118,4 +116,10 @@ export const themeRegister = () => {
  myFunction(x) // Call listener function at run time
  x.addListener(myFunction) // Attach listener function on state changes
 
+}
+
+export const userAlreadyRegistered = (errorCode) => {
+  if(errorCode == 'auth/email-already-in-use'){
+  document.getElementById('alert-txt-email').textContent='El correo ya ha sido registrado'
+  }
 }

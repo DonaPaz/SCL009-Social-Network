@@ -1,19 +1,46 @@
 import { themeProfile } from './themeProfile.js';
-//
+import { logOut } from '../js/logout.js';
+import { themePreferences } from './themePreferences.js';
+import { savePost, getPost } from '../js/auth.js'
 
-
+export const toConect = (doc) => {
+  console.log(doc.data())
+}
+//Creating daashboard template. Here the user should be able to write a post and see it
 export const themeDashboard = () => {
- 
-  //observer() 
-  //Acá se muestra input nombre, contraseña, correo. botón enviar y botón ingresar con google
   document.body.style.background="#EA77A6";
-  document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">
-                                                    
+  document.getElementById('navbar').innerHTML = `<img src="./img/logo.png"  id="logo" alt="logo">
+                                                <div class="dropdown">
+                                                  <button id="btn-drop" class="dropbtn">Perfil</button>
+                                                  <div id="myDropdown" class="dropdown-content">
+                                                    <a id="btn-logout">Cerrar sesión</a>
+                                                    <a id="btn-profile">Perfil</a>
+                                                    <a id="btn-preference">favoritos</a>
+                                                  </div>
+                                                </div>              
   `
   document.getElementById('content').innerHTML = `<p>Tu muro</p>
-                                              <button id="btn-profile">Ir al perfil</button>`
+                                                  <div id="post-header">
+                                                    <p>Nombre user</p>
+                                                  </div>
+                                                  <div id=post-content>
+                                                    <textarea id="user-txt" rows="4" cols="40" placeholder="Escribe aquí"></textarea>
+                                                  </div>
+                                                  <button id="send-btn">Enviar</button>
+                                                  <h6>Todos los posts</h6>
+                                                  <div id="posts"></div>
+                                                  <button id="btn-profile">Ir al perfil</button>`
 
- 
+  document.getElementById('send-btn').addEventListener('click', () => {
+    savePost();
+    getPost();
+    
+  
+    
+  })
+
+  
+
  //navbar
  // AL BAJAR 80 PX SE ADAPTA EL NAVBAR
  window.onscroll = function() {scrollFunction()};
@@ -48,5 +75,31 @@ document.getElementById('btn-profile').addEventListener('click', () => {
     themeProfile();
     window.location.hash = '#/profile';
   })
+ 
+  document.getElementById('btn-drop').addEventListener('click', () => {
+    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById('btn-logout').addEventListener('click', () => {
+      //Acá cerrar sesión del user
+      logOut();
+    })
+    document.getElementById('btn-preference').addEventListener('click', () => {
+      //Acá cerrar sesión del user
+      themePreferences();
+      window.location.hash = '#/preferences';
+
+    })
+    document.getElementById('btn-profile').addEventListener('click', () => {
+      //Acá cerrar sesión del user
+      themeProfile();
+    window.location.hash = '#/profile';
+
+    })
+ 
+  })
+ 
+ 
+ 
+
+
 
 }
