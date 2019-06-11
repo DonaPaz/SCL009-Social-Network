@@ -2,7 +2,7 @@ import { validateNewUser,validateSignInUser } from '../js/validator.js'
 import { themeHome } from '../views/themeHome.js';
 import { userNotRegistered } from '../views/themeSignIn.js';
 import { userAlreadyRegistered } from '../views/themeRegister.js';
-import { themeDashboard } from '../views/themeDashboard.js';
+import { themeDashboard, toConect } from '../views/themeDashboard.js';
 
 //Function to save user info
 export const registerUser = (txtName, txtEmail, txtPassword) => {
@@ -121,18 +121,33 @@ export const savePost = () => {
 };
 //Function to get the posts from Firestore
 export const getPost = () => {
-  var db = firebase.firestore();
+  var db = firebase.firestore()
+    db.collection("posts").get().then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        //console.log(doc.id);
+        //console.log(doc.data())
+        toConect(doc)
+    });
+});
+
+  /* var db = firebase.firestore();
   db.collection("posts").where("userId", "==", firebase.auth().currentUser.uid)
   .get()
   .then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
+      //console.log(doc.id, " => ", doc.data());
+      //console.log(doc.id)
+      //console.log(doc.data())
+      return doc.id
     });
+    prueba(querySnapshot)
   })
   .catch(function(error) {
     console.log("Error getting documents: ", error);
-  });
+  }); */
+
 };
 //Function to know if there's an user loggedIn
 export const observer = () => {
