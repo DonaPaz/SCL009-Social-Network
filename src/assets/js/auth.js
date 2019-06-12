@@ -133,8 +133,7 @@ export const savePost = () => {
 }); */
 export const getPost = () => {
   var db = firebase.firestore();
-  db.collection("posts").where("userId", "==", firebase.auth().currentUser.uid)
-
+  db.collection("posts").where("userId", "==", firebase.auth().currentUser.uid).orderBy("time", "desc").limit(5)
   .get()
   .then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
@@ -142,7 +141,7 @@ export const getPost = () => {
       post.orderBy("time","desc")
       // doc.data() is never undefined for query doc snapshots
       //console.log(doc.id);
-      //console.log(doc.data())
+      console.log(doc.data())
       toConect(doc)
     });
   })
@@ -151,10 +150,14 @@ export const getPost = () => {
   });
 };
 //Function to know if there's an user loggedIn
-export const observer = () => {
+// Se le agrega un callback al observer para poder mostrar los post de forma asincrona
+export const observer = (callback) => {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log('user ok');
+      if(callback) {
+        callback();
+      }
     }
     else { 
       window.onhashchange ="";
