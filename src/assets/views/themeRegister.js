@@ -11,7 +11,7 @@ export const themeRegister = () => {
   //Acá se muestra input nombre, contraseña, correo. botón enviar y botón ingresar con google
   document.body.style.background="";
   document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">
-                                                  <a id="btn-signin">Iniciar sesión</a>`
+                                                  <button id="btn-signin">Iniciar sesión</button>`
   
   
   document.getElementById('content').innerHTML = `<h2>Regístrate</h2>

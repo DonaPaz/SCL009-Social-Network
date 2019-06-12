@@ -1,4 +1,4 @@
-import { validateNewUser, validateEmail, validatePassLength,validateSignInUser } from '../src/assets/js/validator.js';
+import { validateNewUser, validateEmail, validatePassLength,validateSignInUser, validateNewPost } from '../src/assets/js/validator.js';
 
 
 describe('validateNewUser',()=>{
@@ -56,3 +56,16 @@ describe('validateEmail',()=>{
 
 })
 
+describe('validateNewPost',()=>{
+  it('deberia retornar false si el usuario no ingresa un post',()=>{
+    expect(validateNewPost('')).toBe(false);        
+  })
+
+  it('deberia retornar true si el usuario ingresa un post',()=>{
+    expect(validateNewPost('hola')).toBe(true);
+  })
+
+  it('deberia retornar false si el usuario ingresa un espacio',()=>{
+    expect(validateNewPost(' ')).toBe(false);
+  })
+})
