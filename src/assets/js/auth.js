@@ -98,6 +98,7 @@ export const getUser = (email)=> {
       // doc.data() is never undefined for query doc snapshots
       console.log("esta funcion obtiene el nombre del current user desde nuestra base de datos :3")
       firebase.auth().currentUser.email = doc.data().name;
+      toConect(doc);
     });
   })
   .catch(function(error) {
