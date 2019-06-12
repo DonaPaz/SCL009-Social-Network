@@ -57,6 +57,7 @@ export const themePreferences = () => {
   document.getElementById('btn-dashboard').addEventListener('click', () => {
     // llamar a la función que carga el theme project
     // cambiar el hash a #/project
+  
     themeDashboard();
     window.location.hash = '#/dashboard';
   })
