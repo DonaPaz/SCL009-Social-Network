@@ -132,7 +132,7 @@ div.title-container {
    #txt-password{
     margin-left: 2.5rem;
    }
-#alert-txt-user,#alert-txt-email,#alert-txt-password{
+#alert-txt-user,#alert-txt-email,#alert-txt-password,#user-txt-alert{
   margin-top: -0.5rem;
   color: red;
   font-size: 0.8rem;
@@ -146,6 +146,12 @@ margin-right: 2rem;
 }
 #alert-txt-password{
   margin-right: 2rem;
+}
+#user-txt-alert{
+  padding-top: 0.8rem;
+  text-align: left;
+  margin-left: 10%;
+  color: white;
 }
  #btn-init-google{
     background-color: #DF5039;
