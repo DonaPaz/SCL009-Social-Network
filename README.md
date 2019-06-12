@@ -1,38 +1,48 @@
 # My Chingu Red Social
 
+![Portada](https://i.ibb.co/gvCy8fX/Screenshot-1.jpg)   
 
-
+   
 ## Índice
-
+***
 * [Definición del producto](#definición-del-producto)
-* [Resumen del proyecto](#resumen-del-proyecto)
+* [Historias de Usuario](#historias-de-usuario)
+* [Planificación y Diseño](#planificación-y-diseño)
+    
+## Definición del producto
+***
+El K-Pop o música pop Coreana, es un estilo musical que tiene muchos adeptos en Asia, y que hoy en día está adquiriendo una inesperada popularidad en latinoamérica y recientemente en Chile.
+
+El rángo etáreo se establece en un grupo en que las redes sociales son parte importante del día a día. El grupo BTS teine más de 5 millones de seguidores en twitter. 
+
+My Chingu surge como un red social donde los fans del de K-POP encuentren espacios comunes con fandoms Chilenos y latinoamericanos.
+
+#### A quién va dirigido
+* El producto está dirigido a los fans del género musical K-Pop (Pop Coreano) y que busquen un lugar exclusivo para ellos, donde se puedan intercambiar Idols (Ídolos), compartir mensajes, en un ambiente seguro, libre de bullying.
 
 
-### Definición del producto
-
-* Quiénes son los principales usuarios de producto.
-* Qué problema resuelve el producto / para qué le servirá a estos usuarios.
-
+#### Objetivo del producto.
 Cómo descubriste las necesidades de los usuarios
+
+Hoy en día las redes sociales dedicadas al K-Pop comparten su ambiente con otros típos de aficiones, dado como resultado sitios webs muy sobrecargados de información, de dificil entendimiento y registro, o bien dejan la tarea de armar una comunidad al usuario.
+
+
+
+
+#### Solución al problema.
 cómo llegaste a la definición final de tu producto.
+
 Comparte fotos de entrevistas (si las tienes),
 cuestionarios y tus sketches/(bocetos).
 
 
-Desde el punto de vista de UX, deberás:
+## Planificación y Diseño
+***
 
-* Hacer al menos 2 o 3 entrevistas con usuarios.
-* Hacer un  prototipo de baja fidelidad.
-* Asegurarte de que la implementación en código siga los lineamientos del
-  diseño.
-* Hacer sesiones de testing con el producto en HTML.
 
 ### Historias de usuario
 
-Una vez que entiendas las necesidades de tus usuarixs, escribe las Historias de
-Usuario que representen todo lo que necesitan hacer/ver en la Red Social.
 
-Cada una de tus Historias de Usuario debe tener:
 - **Criterios de Aceptación:** todo lo que debe ocurrir para satisfacer las
   necesidades del usuario.
 
@@ -49,105 +59,49 @@ incluir estos aspectos en su Definición de Terminado (más todas las que
   * Hiciste _pruebas_ de usabilidad e incorporaste el _feedback_ del usuario.
   * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
-### Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
+
+### **Diseño de la Interfaz de Usuario**
+
+
+* Hacer al menos 2 o 3 entrevistas con usuarios.
+* Hacer un  prototipo de baja fidelidad.
+* Asegurarte de que la implementación en código siga los lineamientos del
+  diseño.
+* Hacer sesiones de testing con el producto en HTML.
+
+El proceso de diseño se realizó con base en las historias de usuario y sus necesidades
 
 flujo que seguirá el usuario dentro de tu producto
 
 diseñar la Interfaz de Usuario que siga este flujo.
 
-.
 
-### Responsive
+
+### **Prototipo de Baja Fidelidad**
 
 Debe verse bien en dispositivos de pantallas grandes
 (computadoras/es, laptops, etc.) y pequeñas (tablets, celulares, etc.). Te
 sugerimos seguir la técnica de `mobile first` (más detalles sobre esta técnica
 al final).
 
-### Pruebas unitarias (unit tests)
-
-Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,
-_lines_, y _branches_.
-
-### Implementación de la Interfaz de Usuario (UI y comportamiento de Interfaz de Usuario)
-
-Estas son consideraciones para que escribas las Definiciones de Terminado de
-tus H.U.:
+### Test de Usuario 1
 
 
 
+### Test de Usuario 2
+
+Estas son consideraciones para que escribas las Definicio
+
+### **Prototipo Alta Fidelidad**  
 
 
-
-
-
-
-
-
-
-## Evaluación
-
-Recuerda revisar la [rúbrica](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRktPN4ilZtkRN5tUb3DVhgeihwlzk63_-JI3moA-bXpKDbHDioAK2H3qbrwWNb0Ql4wX22Tgv7-PDv/pubhtml)
-para ver la descripción detallada de cada habilidad y cada nivel. Esta es una
-lista de todas las habilidades involucradas en este proyecto y que evaluaremos
-cuando lo completes:
-
-
-
-
-### Habilidades Técnicas, Front-end
-
-| Habilidad |
-|-----------|
-| **JavaScript** |
-| Estilo |
-| Nomenclatura/semántica |
-| Funciones/modularidad |
-| Estructuras de datos |
-| Tests |
-| **HTML** |
-| Validación |
-| Estilo |
-| Semántica |
-| SEO |
-| **CSS** |
-| DRY |
-| Responsive |
-| **SCM** |
-| Git |
-| GitHub |
-| **CS** |
-| Lógica |
-| Arquitectura |
-
-### Habilidades Técnicas, UX
-
-| Habilidad |
-|-----------|
-| User Centricity |
-| Visual Desing |
-
+## Implementación de la Interfaz de Usuario
 ***
+Nuestra página consta de...
 
-## Pistas / Tips / Lecturas complementarias
-
-### Mobile first
-
-El concepto de [_mobile first_](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-hace referencia a un proceso de diseño y desarrollo donde partimos de cómo se ve
-y cómo funciona la aplicación en un dispositivo móvil primero, y más adelante se
-ve como adaptar la aplicación a pantallas progresivamente grandes y
-características específicas del entorno desktop. Esto es en contraposición al
-modelo tradicional, donde primero se diseñaban los websites (o webapps) para
-desktop y después se trataba de _arrugar_ el diseño para que entre en pantallas
-más chicas. La clave acá es asegurarse de que desde el principio diseñan usando
-la vista _responsive_ de las herramientas de desarrollador (developer tools) del
-navegador. De esa forma, partimos de cómo se ve y comporta la aplicación en una
-pantalla y entorno móvil.
-
-
-
-
-
-
-***
+## Build With  
+- Vanilla Javascript (ES6)
+- Firebase - Firestore
+- HTML5
+- CSS
+- Figma
