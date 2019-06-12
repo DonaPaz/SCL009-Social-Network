@@ -5,7 +5,7 @@ export const themeHome = () => {
   //Acá se muestra botón registro y el de inicio sesión
   
   document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">
-                                                 <a id="btn-signin">Iniciar sesión</a>`
+                                                 <button id="btn-signin">Iniciar sesión</button>`
 
   document.getElementById('content').innerHTML = `<h1>Encuentra amigos</h1>
     <div class=register-text>                                             
