@@ -4,9 +4,8 @@ import { observer } from './assets/js/auth.js';
 
 const init = () => {
   firebaseInit();
-  initRouter();
   observer()
-  
+  initRouter();
 }
 
 window.addEventListener('load', init);
