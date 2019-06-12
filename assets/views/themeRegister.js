@@ -15,9 +15,9 @@ export const themeRegister = () => {
   
   
   document.getElementById('content').innerHTML = `<h2>Regístrate</h2>
-                         <input id="txt-user" type="text" placeholder="nombre"><br>
+                         <input id="txt-user" type="text" placeholder="nombre">
                          <p id="alert-txt-user"></p>
-                         <input id="txt-email" type="email" placeholder="email"><br>
+                         <input id="txt-email" type="email" placeholder="email">
                          <p id="alert-txt-email"></p>
                          <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><img id="eye_icon" width="15" src="../img/eye.svg" alt="Oculto"></button><br>
                          <p id="alert-txt-password"></p>

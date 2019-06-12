@@ -2,7 +2,7 @@ import { validateNewUser,validateSignInUser } from '../js/validator.js'
 import { themeHome } from '../views/themeHome.js';
 import { userNotRegistered } from '../views/themeSignIn.js';
 import { userAlreadyRegistered } from '../views/themeRegister.js';
-import { themeDashboard } from '../views/themeDashboard.js';
+import { themeDashboard, toConect } from '../views/themeDashboard.js';
 
 //Function to save user info
 export const registerUser = (txtName, txtEmail, txtPassword) => {
@@ -111,6 +111,7 @@ export const savePost = () => {
   db.collection("posts").add({
   post: document.getElementById('user-txt').value,
   userId: firebase.auth().currentUser.uid,
+  time: new Date()
 })
 .then(function(docRef) {
   console.log("Document written with ID: ", docRef.id);
@@ -120,56 +121,43 @@ export const savePost = () => {
 });
 };
 //Function to get the posts from Firestore
-export const getPost = () => {
+/* export const getPost = () => {
   var db = firebase.firestore()
     db.collection("posts").get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
-    renderPost(doc)        // doc.data() is never undefined for query doc snapshots
+        // doc.data() is never undefined for query doc snapshots
         //console.log(doc.id);
         //console.log(doc.data())
-        //toConect(doc)
+        toConect(doc)
     });
-
-    function renderPost(doc){
-      document.getElementById('user-txt').textContent = ""
-      let userId = document.createElement('span')
-      let posting = document.createElement('post')
-    
-      userId.setAttribute('data-id', doc.id)
-      posting.textContent = doc.data().post
-   
-      posting.appendChild(posting);
-  
-  }
-  
-});
-
-
-
-
-  /* var db = firebase.firestore();
-  db.collection("posts").where("userId", "==", firebase.auth().currentUser.uid)
+}); */
+export const getPost = () => {
+  var db = firebase.firestore();
+  db.collection("posts").where("userId", "==", firebase.auth().currentUser.uid).orderBy("time", "desc").limit(5)
   .get()
   .then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
+      let post=db.collection("posts");
+      post.orderBy("time","desc")
       // doc.data() is never undefined for query doc snapshots
-      //console.log(doc.id, " => ", doc.data());
-      //console.log(doc.id)
-      //console.log(doc.data())
-      return doc.id
+      //console.log(doc.id);
+      console.log(doc.data())
+      toConect(doc)
     });
-    prueba(querySnapshot)
   })
   .catch(function(error) {
     console.log("Error getting documents: ", error);
-  }); */
-
+  });
 };
 //Function to know if there's an user loggedIn
-export const observer = () => {
+// Se le agrega un callback al observer para poder mostrar los post de forma asincrona
+export const observer = (callback) => {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log('user ok');
+      if(callback) {
+        callback();
+      }
     }
     else { 
       window.onhashchange ="";
