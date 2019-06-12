@@ -1,17 +1,25 @@
 import { themeProfile } from './themeProfile.js';
 import { logOut } from '../js/logout.js';
 import { themePreferences } from './themePreferences.js';
-import { savePost, getPost, observer } from '../js/auth.js'
+import { savePost, getPost, observer } from '../js/auth.js';
+import { validateNewPost } from '../js/validator.js';
 
 export const toConect = (doc) => {
   //console.log(doc.data())
   let postsContainer = document.getElementById('posts-container');
+  let titleContainer = document.createElement('div');
+  titleContainer.classList.add('title-container');
+  let userName = document.createElement('p');
+  userName.classList.add('user-name');
+  userName.innerHTML = "Post";
   let postContainer = document.createElement('div');
   postContainer.classList.add('postContainer');
   let postTxt = document.createElement('p');
   postTxt.classList.add('post-txt')
   postTxt.innerHTML = doc.data().post;
   postContainer.appendChild(postTxt);
+  titleContainer.appendChild(userName);
+  postsContainer.appendChild(titleContainer);
   postsContainer.appendChild(postContainer);
 }
 //Creating daashboard template. Here the user should be able to write a post and see it
@@ -27,14 +35,15 @@ export const themeDashboard = () => {
                                                   </div>
                                                 </div>              
   `
-  document.getElementById('content').innerHTML = `<p>Tu muro</p>
+  document.getElementById('content').innerHTML = `<h3 id="dashboard-title">Tu muro</h3>
                                                   <div id="post-header">
-                                                    <p>Nombre user</p>
+                                                    <p id="post-title-txt">¡Escribe un post!</p>
                                                   </div>
                                                   <div id="post-content">
-                                                    <textarea id="user-txt" rows="4" cols="40" placeholder="Escribe algo sobre tu Bias"></textarea>
+                                                    <textarea id="user-txt" maxlength="50" rows="4" cols="40" placeholder="Escribe algo sobre tu Bias"></textarea>
                                                   </div>
-                                                  <button id="send-btn">Enviar</button>
+                                                  <div><p id="user-txt-alert"></p></div>
+                                                  <button id="send-btn" align=right>Enviar</button>
                                                   <h6>Todos los posts</h6>
                                                   <div id="posts-container"></div>
                                                   <button id="btn-profile">Ir al perfil</button>`
@@ -44,10 +53,30 @@ export const themeDashboard = () => {
   observer(getPost);
 
   document.getElementById('send-btn').addEventListener('click', () => {
+/*     let userTxt = document.getElementById('user-txt');
+    let userTxtAlert = document.getElementById('user-txt-alert');
+    if (userTxt != ""){
     savePost();
     document.getElementById("posts-container").innerHTML = "";
     getPost();
-  })
+  }
+  else (userTxt === '' || !validateNewPost(userTxt)) {
+      userTxtAlert.textContent = "Debes escribir un comentario"
+    }
+  */
+
+
+  let userTxt = document.getElementById('user-txt').value;
+  let userTxtAlert = document.getElementById('user-txt-alert'); 
+  if (userTxt === '' || userTxt === ' ' || !validateNewPost) {
+    userTxtAlert.innerHTML = "Debes ingresar un comentario"
+  }
+  else {
+    savePost();
+    document.getElementById("posts-container").innerHTML = "";
+    getPost();
+  }
+})
 
  //navbar
  // AL BAJAR 80 PX SE ADAPTA EL NAVBAR
@@ -56,10 +85,8 @@ export const themeDashboard = () => {
  function scrollFunction() {
    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
      document.getElementById("navbar").style.padding = "10px 10px";
-     
    } else {
      document.getElementById("navbar").style.padding = "15px 10px";
-    
    }
  }   
  // FUNCION PARA LOGO
@@ -94,15 +121,12 @@ document.getElementById('btn-profile').addEventListener('click', () => {
       //Acá cerrar sesión del user
       themePreferences();
       window.location.hash = '#/preferences';
-
     })
     document.getElementById('btn-profile').addEventListener('click', () => {
       //Acá cerrar sesión del user
       themeProfile();
-    window.location.hash = '#/profile';
-
+      window.location.hash = '#/profile';
     })
- 
   })
-
 }
+
