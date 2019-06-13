@@ -19,13 +19,10 @@ export const toConect = (doc) => {
  
   //Saving post id as the btn id
  // textCounter.setAttribute('id',counter);
-  textCounter.innerHTML=` ${doc.data().like}`
-  deleteBtn.setAttribute('id', doc.id);
-  btnlike.setAttribute('value', doc.id);
-  btnlike.setAttribute('id', 'like'+doc.id);
-  deleteBtn.innerHTML = '<img id="eye_icon" width="15" src="../img/delete.svg" alt="Oculto">';
-  btnlike.innerHTML = '<img id="btn-like" width="15" src="../img/like.png" alt="Like">';
   
+  deleteBtn.setAttribute('id', doc.id);
+  deleteBtn.innerHTML = '<img id="cross-icon" width="15" src="../img/delete.svg" alt="Oculto">';
+
   let postContainer = document.createElement('div');
   postContainer.classList.add('postContainer');
   let postTxt = document.createElement('p');
