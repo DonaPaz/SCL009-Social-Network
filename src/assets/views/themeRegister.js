@@ -19,7 +19,7 @@ export const themeRegister = () => {
                          <p id="alert-txt-email"></p>
                          <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><img id="eye_icon" width="15" src="../img/eye.svg" alt="Oculto"></button><br>
                          <p id="alert-txt-password"></p>
-                         <button id = "btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
+                         <button id="btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
                          <button id ="btn-preferences"  href="#preferences" class="btn btn-secondary">Enviar</button><br>`
 
   document.getElementById('eye_btn').addEventListener('click', () => {
