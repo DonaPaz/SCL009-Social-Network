@@ -1,7 +1,7 @@
 import { themeProfile } from './themeProfile.js';
 import { logOut } from '../js/logout.js';
 import { themePreferences } from './themePreferences.js';
-import { savePost, getPost, observer, deletePost } from '../js/auth.js';
+import { savePost, getPost, observer, deletePost, newLike } from '../js/auth.js';
 import { validateNewPost } from '../js/validator.js';
 
 export const toConect = (doc) => {
@@ -12,10 +12,20 @@ export const toConect = (doc) => {
   userName.classList.add('user-name');
   userName.innerHTML = "Post";
   let deleteBtn = document.createElement('button');
+  let btnlike = document.createElement('button');
+  let textCounter =document.createElement('span');
   deleteBtn.classList.add('delete-btns')
+  btnlike.classList.add('like-btns')
+ 
   //Saving post id as the btn id
+ // textCounter.setAttribute('id',counter);
+  textCounter.innerHTML=` ${doc.data().like}`
   deleteBtn.setAttribute('id', doc.id);
+  btnlike.setAttribute('value', doc.id);
+  btnlike.setAttribute('id', 'like'+doc.id);
   deleteBtn.innerHTML = '<img id="eye_icon" width="15" src="../img/delete.svg" alt="Oculto">';
+  btnlike.innerHTML = '<img id="btn-like" width="15" src="../img/like.png" alt="Like">';
+  
   let postContainer = document.createElement('div');
   postContainer.classList.add('postContainer');
   let postTxt = document.createElement('p');
@@ -24,6 +34,9 @@ export const toConect = (doc) => {
   postContainer.appendChild(postTxt);
   titleContainer.appendChild(userName);
   titleContainer.appendChild(deleteBtn);
+  titleContainer.appendChild(btnlike);
+  
+  btnlike.appendChild(textCounter);
   postsContainer.appendChild(titleContainer);
   postsContainer.appendChild(postContainer);
   
@@ -35,7 +48,20 @@ export const toConect = (doc) => {
     postsContainer.innerHTML = "";
     getPost()
   });
+
+   //btn like
+document.getElementById('like'+doc.id).addEventListener('click', () => {
+  let postid= document.getElementById('like'+doc.id).value;
+document.getElementById('counter')+=1;
+  newLike(postid)
+
+});
+
+
+
+
 };
+
 
 //Creating daashboard template. Here the user should be able to write a post and see it
 export const themeDashboard = () => {
@@ -126,10 +152,10 @@ export const themeDashboard = () => {
   function scrollFunction() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
       document.getElementById("navbar").style.padding = "10px 10px";
-      document.body.style.background="#EA77A6";
+      
     } else {
       document.getElementById("navbar").style.padding = "15px 10px";
-      document.body.style.background="#EA77A6";
+      
     }
   }   
  
@@ -137,9 +163,10 @@ export const themeDashboard = () => {
   function myFunction(x) {
     if (x.matches) { // If media query matches
     document.getElementById("logo").style.width = "10rem";
-   
+    document.body.style.background="#EA77A6";
     } else {
       document.getElementById("logo").style.width = "12rem";
+      document.body.style.background="#EA77A6";
     }
   }
 
