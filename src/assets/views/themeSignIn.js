@@ -15,7 +15,7 @@ export const themeSignIn = () => {
                   
                                   <input id="txt-email" type="email" placeholder="email">
                                   <p id="alert-txt-email"></p>
-                                  <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><img id="eye_icon" width="15" src="../img/eye.svg" alt="Oculto"></button><br>
+                                  <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><object><img id="eye_icon" width="15" src="../img/eye.svg" alt="Oculto"></object></button><br>
                                   <p id="alert-txt-password"></p>
                      <button id="btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
                      <button id="btn-enter">Entrar</button>`
