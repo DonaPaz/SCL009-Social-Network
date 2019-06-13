@@ -134,7 +134,7 @@ export const savePost = () => {
 }); */
 export const getPost = () => {
   var db = firebase.firestore();
-  db.collection("posts").where("userId", "==", firebase.auth().currentUser.uid).orderBy("time", "desc").limit(5)
+  db.collection("posts").where("userId", "==", firebase.auth().currentUser.uid).orderBy("time", "desc").limit(20)
   .get()
   .then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
@@ -167,3 +167,12 @@ export const observer = (callback) => {
     }
   });
 };
+//Function to delete a document from posts collection
+export const deletePost = (id) => {
+let db = firebase.firestore();
+db.collection("posts").doc(id).delete().then(function() {
+  console.log("Document successfully deleted!");
+}).catch(function(error) {
+  console.error("Error removing document: ", error);
+})
+}
