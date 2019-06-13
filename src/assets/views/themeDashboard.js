@@ -1,17 +1,21 @@
 import { themeProfile } from './themeProfile.js';
 import { logOut } from '../js/logout.js';
 import { themePreferences } from './themePreferences.js';
-import { savePost, getPost, observer } from '../js/auth.js';
+import { savePost, getPost, observer, deletePost } from '../js/auth.js';
 import { validateNewPost } from '../js/validator.js';
 
 export const toConect = (doc) => {
-  //console.log(doc.data())
   let postsContainer = document.getElementById('posts-container');
   let titleContainer = document.createElement('div');
   titleContainer.classList.add('title-container');
   let userName = document.createElement('p');
   userName.classList.add('user-name');
   userName.innerHTML = "Post";
+  let deleteBtn = document.createElement('button');
+  deleteBtn.classList.add('delete-btns')
+  //Saving post id as the btn id
+  deleteBtn.setAttribute('id', doc.id);
+  deleteBtn.innerHTML = '<img id="cross-icon" width="15" src="../img/delete.svg" alt="Oculto">';
   let postContainer = document.createElement('div');
   postContainer.classList.add('postContainer');
   let postTxt = document.createElement('p');
@@ -19,21 +23,32 @@ export const toConect = (doc) => {
   postTxt.innerHTML = doc.data().post;
   postContainer.appendChild(postTxt);
   titleContainer.appendChild(userName);
+  titleContainer.appendChild(deleteBtn);
   postsContainer.appendChild(titleContainer);
   postsContainer.appendChild(postContainer);
-}
+  
+  //function to delete a post
+  deleteBtn.addEventListener('click', () => {
+    //Calling function deletePost in auth
+    deletePost(doc.id);
+    alert('Mensaje borrado!');
+    postsContainer.innerHTML = "";
+    getPost()
+  });
+};
+
 //Creating daashboard template. Here the user should be able to write a post and see it
 export const themeDashboard = () => {
   
   document.body.style.background="#EA77A6";
   document.getElementById('navbar').innerHTML = `<img src="./img/logo.png"  id="logo" alt="logo">
-  <a id="btn-logout">Cerrar sesión</a>
-  <a id="btn-preference">Preferencias</a>
-  <a id="btn-profile">perfil</a>
-  <a href="javascript:void(0);" id="icon" class="icon" >
-    <i class="fa fa-bars"></i>
-  </a>       
-  `
+                                                <a id="btn-logout">Cerrar sesión</a>
+                                                <a id="btn-preference">Preferencias</a>
+                                                <a id="btn-profile">perfil</a>
+                                                <a href="javascript:void(0);" id="icon" class="icon" >
+                                                  <i class="fa fa-bars"></i>
+                                                </a>       
+                                                `
 
   document.getElementById('content').innerHTML = `<h3 id="dashboard-title">Tu muro</h3>
 
@@ -53,6 +68,8 @@ export const themeDashboard = () => {
   // después de verificar el user 
   observer(getPost);
 
+  
+
   document.getElementById('send-btn').addEventListener('click', () => {
 
   let userTxt = document.getElementById('user-txt').value;
@@ -67,91 +84,75 @@ export const themeDashboard = () => {
   }
 
   })
- //BOTONES
- document.getElementById('btn-logout').addEventListener('click', () => {
-  let x = document.getElementById("navbar");
-  if (x.className === "responsive") {
-    x.className = "top";
-  } else {
-    x.className = "responsive";
-  }
-  //Acá cerrar sesión del user
-  logOut();
-})
-document.getElementById('btn-profile').addEventListener('click', () => {
-  // llamar a la función que carga el theme project
-  // cambiar el hash a #/project
-  let x = document.getElementById("navbar");
-  if (x.className === "responsive") {
-    x.className = "top";
-  } else {
-    x.className = "responsive";
-  }
- 
-  themeProfile();
-  window.location.hash = '#/profile';
-}) 
-document.getElementById('btn-preference').addEventListener('click', () => {
-  //Acá cerrar sesión del user
-  let x = document.getElementById("navbar");
-  if (x.className === "responsive") {
-    x.className = "top";
-  } else {
-    x.className = "responsive";
-  }
-  
-  themePreferences();
-  window.location.hash = '#/preferences';
-
-
-})
+  //BOTONES
+  document.getElementById('btn-logout').addEventListener('click', () => {
+    let x = document.getElementById("navbar");
+    if (x.className === "responsive") {
+      x.className = "top";
+    } else {
+      x.className = "responsive";
+    }
+    //Acá cerrar sesión del user
+    logOut();
+  })
+  document.getElementById('btn-profile').addEventListener('click', () => {
+    // llamar a la función que carga el theme project
+    // cambiar el hash a #/project
+    let x = document.getElementById("navbar");
+    if (x.className === "responsive") {
+      x.className = "top";
+    } else {
+      x.className = "responsive";
+    }
+    themeProfile();
+    window.location.hash = '#/profile';
+  }) 
+  document.getElementById('btn-preference').addEventListener('click', () => {
+    //Acá cerrar sesión del user
+    let x = document.getElementById("navbar");
+    if (x.className === "responsive") {
+      x.className = "top";
+    } else {
+      x.className = "responsive";
+    }
+    themePreferences();
+    window.location.hash = '#/preferences';
+  })
 
 //navbar
- // AL BAJAR 80 PX SE ADAPTA EL NAVBAR
- window.onscroll = function() {scrollFunction()};
+  // AL BAJAR 80 PX SE ADAPTA EL NAVBAR
+  window.onscroll = function() {scrollFunction()};
 
- function scrollFunction() {
-   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-     document.getElementById("navbar").style.padding = "10px 10px";
-     document.body.style.background="#EA77A6";
-   } else {
-     document.getElementById("navbar").style.padding = "15px 10px";
-     document.body.style.background="#EA77A6";
-
-   }
- }   
+  function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      document.getElementById("navbar").style.padding = "10px 10px";
+      document.body.style.background="#EA77A6";
+    } else {
+      document.getElementById("navbar").style.padding = "15px 10px";
+      document.body.style.background="#EA77A6";
+    }
+  }   
  
- 
- 
-  
   // FUNCION PARA LOGO
- function myFunction(x) {
-  if (x.matches) { // If media query matches
+  function myFunction(x) {
+    if (x.matches) { // If media query matches
     document.getElementById("logo").style.width = "10rem";
    
-  } else {
-   document.getElementById("logo").style.width = "12rem";
-  
-  }
-}
-
-var x = window.matchMedia("(max-width: 500px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
-
-document.getElementById("icon").addEventListener('click',()=>{
-    
-  let x = document.getElementById("navbar");
-  if (x.className === "top") {
-    x.className = "responsive";
-  } else {
-    x.className = "top";
+    } else {
+      document.getElementById("logo").style.width = "12rem";
+    }
   }
 
-  
-})
+  var x = window.matchMedia("(max-width: 500px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction) // Attach listener function on state changes
 
-  
-
+  document.getElementById("icon").addEventListener('click',() => {
+    let x = document.getElementById("navbar");
+    if (x.className === "top") {
+      x.className = "responsive";
+    } else {
+      x.className = "top";
+    }
+  })
 }
-

@@ -5,8 +5,6 @@ import { themePreferences } from './themePreferences.js';
 import { themeSignIn } from './themeSignIn.js';
 import { eye } from '../js/lib.js';
 
-
-
 export const themeRegister = () => {
   //Acá se muestra input nombre, contraseña, correo. botón enviar y botón ingresar con google
   document.body.style.background="";
