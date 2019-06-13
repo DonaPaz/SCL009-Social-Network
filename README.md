@@ -98,6 +98,8 @@ flujo que seguirá el usuario dentro de tu producto
 ### **Prototipo de Baja Fidelidad**
 
 ![Prototipo baja](https://i.ibb.co/6WmCgtZ/sketch1.jpg)   
+![Prototipo baja](https://i.ibb.co/vX69vpR/bajaiteracion.jpg) 
+
 
 #### Test de Usuario 1
 ![TestUsuario1](https://i.ibb.co/LSpJTc6/test1.jpg)  
@@ -116,20 +118,27 @@ flujo que seguirá el usuario dentro de tu producto
 
 
 #### Test de Usuario 2
+
 ***
 ## Implementación de la Interfaz de Usuario
 ***
+![Implementación](https://i.ibb.co/k8sMw8r/portada-web1.jpg)  
+
+
 Nuestra interfaz cuenta con diferentes secciones:
-- Inicio (home): Página inicial, invita al usuario a iniciar sesión mediante un botón en nav-bar o a registrarse mediante un botón central en el body.
-- Registro: página en la que el usuario podrá registrarse mediante el ingreso de un nombre de usuario, un mail y una contraseña. En caso de que se ingresen datos no válidos o que el mail ya existiera en la base de datos, el usuario recibe mensajes de error.
+- **Inicio (Home)**: Página inicial, invita al usuario a iniciar sesión mediante un botón en nav-bar o a registrarse mediante un botón central en el body.
+
+- **Registro**: página en la que el usuario podrá registrarse mediante el ingreso de un nombre de usuario, un mail y una contraseña. En caso de que se ingresen datos no válidos o que el mail ya existiera en la base de datos, el usuario recibe mensajes de error.
 Solo si el registro es exitoso, el usuario podrá acceder al muro.  El usuario también tiene la opción de acceder con google.
-- Inicio de sesión: El usuario podrá iniciar sesión con su mail y password, también podrá acceder con google.
-- Muro: El usuario puede escribi post, publicarlos y editarlos.
+
+- **Inicio de sesión**: El usuario podrá iniciar sesión con su mail y password, también podrá acceder con google.
+
+- **Muro**: El usuario puede escribi post, publicarlos y editarlos.
 
 Futuras implementaciones:
-- Preferencias: El usuario podrá seleccionar las disqueras o grupos musicales favoritos. Esto permitirá que el usuario vea a otros usuarios con gustos similares.
+- **Preferencias**: El usuario podrá seleccionar las disqueras o grupos musicales favoritos. Esto permitirá que el usuario vea a otros usuarios con gustos similares.
 
-- Perfil: El usuario contará con un perfil con foto.
+- **Perfil**: El usuario contará con un perfil con foto, donde además podrá visualizar sus preferencias, amigos, y editarlos.
 
 El resultado final de la implementación lo puedes ver en nuestro deployment de Git-Hub [AQUÍ](https://donapaz.github.io/SCL009-Social-Network/)
 
