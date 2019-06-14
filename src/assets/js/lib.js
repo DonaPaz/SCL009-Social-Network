@@ -2,12 +2,12 @@
 export const eye = () => {
   let eyeIcon = document.getElementById("eye_icon")
   let hiddenText = document.getElementById("txt-password")
-  if (eyeIcon.getAttribute("src") == "../img/eye.svg"){
+  if (eyeIcon.getAttribute("class") == "fa-eye"){
     hiddenText.setAttribute("type", "text")
-    eyeIcon.setAttribute("src", "../img/eye-closed.svg")
+    eyeIcon.setAttribute("class", "fa-eye-slash")
   } 
   else {
-    eyeIcon.setAttribute("src", "../img/eye.svg")
+    eyeIcon.setAttribute("class", "fa-eye")
     hiddenText.setAttribute("type", "password")
   }
 }

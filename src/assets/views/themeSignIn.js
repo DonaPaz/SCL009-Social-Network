@@ -11,14 +11,13 @@ export const themeSignIn = () => {
   document.getElementById('navbar').innerHTML=`  <img src="./img/logo.png"  id="logo" alt="logo">`
 
 
-  document.getElementById('content').innerHTML = ` <h2>Iniciar sesión</h2>
-                  
-                                  <input id="txt-email" type="email" placeholder="email">
-                                  <p id="alert-txt-email"></p>
-                                  <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><object><embed id="eye_icon" src="../img/eye.svg"></object></button><br>
-                                  <p id="alert-txt-password"></p>
-                     <button id="btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
-                     <button id="btn-enter">Entrar</button>`
+  document.getElementById('content').innerHTML = `<h2>Iniciar sesión</h2>
+                                                  <input id="txt-email" type="email" placeholder="email">
+                                                  <p id="alert-txt-email"></p>
+                                                  <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><i id="eye_icon" class="fas fa-eye"></i></button><br>
+                                                  <p id="alert-txt-password"></p>
+                                                  <button id="btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
+                                                  <button id="btn-enter">Entrar</button>`
   
   document.getElementById('eye_btn').addEventListener('click', () => {
     eye();
