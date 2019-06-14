@@ -1,4 +1,4 @@
-# My Chingu Red Social
+# **My Chingu Red Social**
 
 ![Portada](https://i.ibb.co/kx5s0XC/Screenshot-2.jpg)   
 
@@ -7,18 +7,18 @@
 ***
 * [Definición del producto](#definición-del-producto)
 * [Planificación y Diseño](#planificación-y-diseño)
-* [Implementación de Interfaz de Usuario](#implementación-de-interfaz-de-usuario)
+* [Implementación de Interfaz de Usuario](#implementación-de-la-interfaz-de-usuario)
 ***   
 ## Definición del producto
 ***
-El K-Pop, o música pop Coreana, es un estilo musical que tiene muchos adeptos en Asia, y que hoy en día está adquiriendo una inesperada popularidad en latinoamérica y recientemente en Chile.
+El K-Pop, o música pop Coreana, es un estilo musical que tiene muchos adeptos en Asia, y que hoy en día está adquiriendo una inesperada popularidad en latinoamérica y recientemente en Chile. 
 
-El rángo etáreo, donde predominan los nativos digitales, establecen un grupo objetivo en que las redes sociales son parte importante del día a día, por ejemplo, el grupo BTS tiene más de 20 millones de seguidores en su twitter oficial en coreano y aproximadamente 15 millones de seguidores en su twitter oficial en inglés.
+La difusión del K-POP en latinoamérica se realiza mayormente a través de las redes sociales, y son los mismos seguidores quienes difunden las novedades. Por ejemplo, el grupo BTS tiene más de 20 millones de seguidores en su twitter oficial en coreano y aproximadamente 15 millones de seguidores en su twitter oficial en inglés.
 
-My Chingu, que en español significa "Mi Amigo", surge como un red social para que los fans del de K-POP encuentren espacios comunes con fandoms chilenos y latinoamericanos. Podrán compartir sus Idols y grupos favoritos, historias y lo que deseen contar a sus amigos.
+My Chingu, que en español significa "Mi Amigo", es una WebApp que surge para que los fans del de K-POP encuentren espacios comunes con fandoms chilenos y latinoamericanos. Podrán compartir sus Idols y grupos favoritos, historias y lo que deseen contar a sus amigos.
 
 #### A quién va dirigido
-* El producto está dirigido a todos los fans del género musical K-Pop (Pop Coreano) y que busquen un lugar exclusivo para ellos, donde se puedan intercambiar Idols (Ídolos), compartir mensajes, en un ambiente seguro, libre de bullying.
+* El producto está dirigido a los fans del K-POP, hombres y mujeres, predominantemente entre los 12 y 35 años, nativos digitales, y que consideran que las redes sociales son parte importante del día a día, que buscan un lugar exclusivo para ellos, donde se puedan intercambiar Idols (Ídolos), compartir mensajes, en un ambiente seguro, libre de bullying.
 
 #### Objetivo del producto.    
 * Se estimaron las necesidades del usuario realizando diferentes actividades:
@@ -40,13 +40,14 @@ My Chingu entrega un espacio exclusivo para los Fans del K-Pop. Podrán registra
 
 También el usuario podrá escribir en su muro sobre sus Bias, Idols y grupo favorito. 
 
-Pronto! Podrá compartir fotos con otros usuarios o amigos.
+
 
 ***
 ## Planificación y Diseño
 ***
 Para el proceso de planificación y diseño se utilizaron las siguientes herramientas:    
-- Trello: Nos permitió mantener el orden en el proceso de producción, a través del desarrollo de historias de usuario con la determición del criterio de aceptación y la definición de terminado. Puedes ver nuestro Trello pinchando [AQUÍ](https://trello.com/b/BoPsoPwa/red-social)  
+- Trello: Nos permitió mantener el orden en el proceso de producción, a través del desarrollo de historias de usuario con la determición del criterio de aceptación y la definición de terminado. Puedes ver nuestro Trello pinchando [AQUÍ](https://trello.com/b/BoPsoPwa/red-social)
+
 - Diagramas de flujo: Diagrama que permitió definir el flujo que debía seguir el usuario al ingresar a la página web.
 - Figma: Interfaz de diseño colaborativa que permitió desarrollar el prototipo de alta fidelidad.
 
@@ -56,7 +57,7 @@ cuestionarios y tus sketches/(bocetos).
 ### Historias de usuario
 Utilizamos las historias de usuario como el instrumento principal para identificar los requerimientos de usuario.
 
--__Historia 1__  
+__Historia 1__  
 _Como_ usuario _quiero_ elegir un correo y una contraseña para  _poder_ registrarme en My Chingu
 
 __Hitoria 2__  
@@ -84,10 +85,8 @@ _Como_ usario quiero eliminar una publicación para _poder_ evitar que otros vea
 
 ### **Diseño de la Interfaz de Usuario**
 
-El proceso de diseño se realizó con base en las entrevistas y las historias de usuario y las necesidades que surgieron.
+El proceso de diseño se realizó con base en las entrevistas y las historias de usuario y las necesidades que surgieron. 
 
-
-* Hacer sesiones de testing con el producto en HTML.
 
 
 flujo que seguirá el usuario dentro de tu producto
@@ -97,7 +96,9 @@ flujo que seguirá el usuario dentro de tu producto
 
 ### **Prototipo de Baja Fidelidad**
 
-![Prototipo baja](https://i.ibb.co/6WmCgtZ/sketch1.jpg)   
+![Prototipo baja](https://i.ibb.co/6WmCgtZ/sketch1.jpg)
+
+Primera Iteración
 ![Prototipo baja](https://i.ibb.co/vX69vpR/bajaiteracion.jpg) 
 
 
@@ -108,7 +109,8 @@ flujo que seguirá el usuario dentro de tu producto
 ![TestUsuario2](https://i.ibb.co/hLxfDkN/test2.jpg)  
 
 
-### **Prototipo Alta Fidelidad**  
+### **Prototipo Alta Fidelidad**
+Con los test de usuario  con proptotipo de baja fidelidad se llegó al diseño de alta fidelidad.
 ![Prototito alta fidelidad](https://i.ibb.co/wK661zt/altafid1.jpg)  
 ![Prototito alta fidelidad](https://i.ibb.co/RgSyZYH/altafid2.jpg)  
 
