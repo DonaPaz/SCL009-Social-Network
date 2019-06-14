@@ -1,7 +1,7 @@
 import { themeProfile } from './themeProfile.js';
 import { logOut } from '../js/logout.js';
 import { themePreferences } from './themePreferences.js';
-import { savePost, getPost, observer, deletePost, newLike } from '../js/auth.js';
+import { savePost, getPost, observer, deletePost } from '../js/auth.js';
 import { validateNewPost } from '../js/validator.js';
 
 export const toConect = (doc) => {
@@ -47,16 +47,6 @@ export const toConect = (doc) => {
   });
 
    //btn like
-document.getElementById('like'+doc.id).addEventListener('click', () => {
-  let postid= document.getElementById('like'+doc.id).value;
-document.getElementById('counter')+=1;
-  newLike(postid)
-
-});
-
-
-
-
 };
 
 
