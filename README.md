@@ -103,14 +103,14 @@ Determinado el flujo se realizó el primer sketch. Este fue presentado en otros 
 
 ![Prototipo baja](https://i.ibb.co/6WmCgtZ/sketch1.jpg)
 
-Primera Iteración.
+Primera Iteración.    
 ![Prototipo baja](https://i.ibb.co/vX69vpR/bajaiteracion.jpg) 
 
 
 #### Test de Usuario
 Con la primera iteración se presentó el sketch a dos usuarios.
 
-Test 1
+Test 1    
 ![TestUsuario1](https://i.ibb.co/LSpJTc6/test1.jpg)  
 
 Test 2  
@@ -121,7 +121,7 @@ Se obtuvieron las siguientes problemas de usabilidad:
 
 
 ### **Prototipo Alta Fidelidad**
-De los test de usuario con proptotipo de baja fidelidad, se realizó la segunda iteración. Los cambios se realizaron en un diseño de alta fidelidad.
+De los test de usuario con proptotipo de baja fidelidad, se realizó la segunda iteración. Los cambios se realizaron en un diseño de alta fidelidad.    
 ![Prototito alta fidelidad](https://i.ibb.co/wK661zt/altafid1.jpg)  
 ![Prototito alta fidelidad](https://i.ibb.co/RgSyZYH/altafid2.jpg)  
 
@@ -174,4 +174,4 @@ El resultado final de la implementación lo puedes ver en nuestro deployment de 
 - CSS
 - Figma
 ***
-~My Chingu Team~
+**My Chingu Team**
