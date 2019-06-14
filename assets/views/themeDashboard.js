@@ -12,10 +12,8 @@ export const toConect = (doc) => {
   userName.classList.add('user-name');
   userName.innerHTML = "Post";
   let deleteBtn = document.createElement('button');
-  let btnlike = document.createElement('button');
-  let textCounter =document.createElement('span');
   deleteBtn.classList.add('delete-btns')
-  btnlike.classList.add('like-btns')
+  
  
   //Saving post id as the btn id
  // textCounter.setAttribute('id',counter);
@@ -31,9 +29,7 @@ export const toConect = (doc) => {
   postContainer.appendChild(postTxt);
   titleContainer.appendChild(userName);
   titleContainer.appendChild(deleteBtn);
-  titleContainer.appendChild(btnlike);
-  
-  btnlike.appendChild(textCounter);
+    
   postsContainer.appendChild(titleContainer);
   postsContainer.appendChild(postContainer);
   
@@ -55,9 +51,9 @@ export const themeDashboard = () => {
   
   document.body.style.background="#EA77A6";
   document.getElementById('navbar').innerHTML = `<img src="./img/logo.png"  id="logo" alt="logo">
-                                                <a id="btn-logout">Cerrar sesión</a>
-                                                <a id="btn-preference">Preferencias</a>
-                                                <a id="btn-profile">perfil</a>
+                                                <a id="btn-profile">Perfil</a>
+                                                <a id="btn-preference">Preferencias</a>                                              
+                                                <a id="btn-logout">Cerrar Sesión</a>
                                                 <a href="javascript:void(0);" id="icon" class="icon" >
                                                   <i class="fa fa-bars"></i>
                                                 </a>       
@@ -73,9 +69,8 @@ export const themeDashboard = () => {
                                                   </div>
                                                   <div><p id="user-txt-alert"></p></div>
                                                   <button id="send-btn" align=right>Enviar</button>
-                                                  <h6>Todos los posts</h6>
-                                                  <div id="posts-container"></div>
-                                                  <button id="btn-profile">Ir al perfil</button>`
+                                                  <h4>Todos los posts</h4>
+                                                  <div id="posts-container"></div>`
 
   // Se le entrega al observer la función que debe ejecutar 
   // después de verificar el user 
@@ -102,8 +97,10 @@ export const themeDashboard = () => {
     let x = document.getElementById("navbar");
     if (x.className === "responsive") {
       x.className = "top";
+      document.getElementById('content').style.marginTop='8rem'
     } else {
       x.className = "responsive";
+      document.getElementById('content').style.marginTop='0rem'
     }
     //Acá cerrar sesión del user
     logOut();
@@ -114,8 +111,10 @@ export const themeDashboard = () => {
     let x = document.getElementById("navbar");
     if (x.className === "responsive") {
       x.className = "top";
+      document.getElementById('content').style.marginTop='8rem'
     } else {
       x.className = "responsive";
+      document.getElementById('content').style.marginTop='0rem'
     }
     themeProfile();
     window.location.hash = '#/profile';
@@ -125,8 +124,10 @@ export const themeDashboard = () => {
     let x = document.getElementById("navbar");
     if (x.className === "responsive") {
       x.className = "top";
+      document.getElementById('content').style.marginTop='8rem'
     } else {
       x.className = "responsive";
+      document.getElementById('content').style.marginTop='0rem'
     }
     themePreferences();
     window.location.hash = '#/preferences';
@@ -165,8 +166,10 @@ export const themeDashboard = () => {
     let x = document.getElementById("navbar");
     if (x.className === "top") {
       x.className = "responsive";
+      document.getElementById('content').style.marginTop='0rem'
     } else {
       x.className = "top";
+      document.getElementById('content').style.marginTop='8rem'
     }
   })
 }

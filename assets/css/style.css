@@ -36,13 +36,7 @@ textarea#user-txt {
   border-color: #ffffff;
   font-family: 'Josefin Sans', sans-serif;
 }
-button#send-btn{
-  background-color: #ff007a;
-  color: #000000;
-  border-width: 0px;
-  margin-top: 5px;
-  cursor: pointer;
-}
+
 div.postContainer {
   background-color: #ffffff;
   width: 80%;
@@ -65,7 +59,7 @@ button.delete-btns {
   height: 15px;
   width: 15px;
   float: right;
-  margin-right: 5px;
+  margin-right: 8px;
   margin-top: -18px;
   cursor: pointer;
 }
@@ -90,7 +84,7 @@ div.title-container {
     margin-top:6.5rem;
     font-family: 'Josefin Sans', sans-serif;
     font-style: normal;
-     text-align: center;
+    text-align: center;
   }
 #navbar {
     overflow: hidden;
@@ -127,20 +121,12 @@ div.title-container {
     border-radius: 4px;
    
   }
- /* #logo{
-    max-width: 100%;
-  height: auto;
-  }*/
+
   #navbar #logo {
     transition: 0.4s;
   }
   
- /* #navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  */
-   #txt-user, #txt-email, #txt-password{
+  #txt-user, #txt-email, #txt-password{
     background-color: #CAFE1E;
     margin: 0.5rem;
     padding-left: 1.5rem;
@@ -184,11 +170,11 @@ margin-right: 2rem;
   padding-right: 3rem;
   border-radius: 0.5rem;
   border-width: 0px;
-  font-family: Coolvetica;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 1.3rem;
   cursor: pointer
 }
-#btn-preferences, #btn-register,#btn-enter,#btn-dashboard {
+#btn-preferences, #btn-register,#btn-enter,#btn-dashboard, #send-btn {
   background-color: #F13A64;
   margin: 1rem;
   padding: 1rem;
@@ -200,6 +186,15 @@ margin-right: 2rem;
   font-size: 1.3rem;
   cursor: pointer;
   }
+  button#send-btn{
+    margin-top: 5px;
+    padding: 0.5rem
+  }
+
+#btn-preference, #btn-logout{
+  cursor: pointer
+}
+
 h1{
   color: white;
   font-size: 3rem;
@@ -258,4 +253,5 @@ h1{
     display: block;
     text-align: left;
   }
+  
 }
