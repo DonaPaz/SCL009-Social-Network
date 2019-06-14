@@ -9,6 +9,10 @@ button#eye_btn {
   cursor: pointer;
   border-width: 0px;
 }
+embed#eye_icon {
+  width: 15px;
+  height: 15px;
+}
 h3#dashboard-title {
   padding-top: 15px;
   font-family: 'Josefin Sans', sans-serif;
