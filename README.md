@@ -93,13 +93,13 @@ _Como_ usario quiero eliminar una publicación para _poder_ evitar que otros vea
 El proceso de diseño se realizó con base en laos resultados de las entrevistas a usuarios y las historias de usuario que se eleaboraron a partir de ellas.
 
 
-Primeramente se realizó un flujo que el usuario seguirá en la web
-![flujo](https://i.ibb.co/6WmCgtZ/sketch1.jpg)
+Primeramente se realizó un flujo que el usuario seguirá en la web.
+![flujo](https://i.ibb.co/r61XNDy/flujo.jpg)
 
 
 
 ### **Prototipo de Baja Fidelidad**
-Determinado el flujo se realizó el primer sketch. Este fue presentado en otros grupos de trabajo para recibir feedback.
+Determinado el flujo se realizó el primer sketch basado en Mobile First. Este fue presentado en otros grupos de trabajo para recibir feedback.
 
 ![Prototipo baja](https://i.ibb.co/6WmCgtZ/sketch1.jpg)
 
