@@ -1,13 +1,15 @@
 // Function to show or hide user password when writing 
 export const eye = () => {
-  let eyeIcon = document.getElementById("eye_icon")
+  let spanEye = document.getElementById("span-eye")
   let hiddenText = document.getElementById("txt-password")
-  if (eyeIcon.getAttribute("class") == "fa-eye"){
+  if (spanEye.getAttribute("value") == "eye-opened"){
+    spanEye.innerHTML = '<i id="eye_icon" class="fas fa-eye-slash"></i>'
+    spanEye.setAttribute("value", "eye-closed")
     hiddenText.setAttribute("type", "text")
-    eyeIcon.setAttribute("class", "fa-eye-slash")
-  } 
+  }
   else {
-    eyeIcon.setAttribute("class", "fa-eye")
+    spanEye.innerHTML = '<i id="eye_icon" class="fas fa-eye"></i>'
+    spanEye.setAttribute("value", "eye-opened")
     hiddenText.setAttribute("type", "password")
   }
 }

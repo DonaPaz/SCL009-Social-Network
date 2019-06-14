@@ -17,7 +17,7 @@ export const themeRegister = () => {
                          <p id="alert-txt-user"></p>
                          <input id="txt-email" type="email" placeholder="email">
                          <p id="alert-txt-email"></p>
-                         <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><i id="eye_icon" class="fas fa-eye"></i></button><br>
+                         <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><span id="span-eye" value="eye-opened"><i id="eye_icon" class="fas fa-eye"></i></span></button><br>
                          <p id="alert-txt-password"></p>
                          <button id="btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
                          <button id ="btn-preferences"  href="#preferences" class="btn btn-secondary">Enviar</button><br>`
