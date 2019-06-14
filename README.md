@@ -9,20 +9,23 @@
 * [Planificación y Diseño](#planificación-y-diseño)
 * [Implementación de Interfaz de Usuario](#implementación-de-la-interfaz-de-usuario)
 ***   
+
 ## Definición del producto
 ***
+My Chingu, que en español significa "Mi Amigo", es una WebApp que surge para que los fans del de K-POP encuentren espacios comunes con fandoms chilenos y latinoamericanos. Podrán compartir sus Idols y grupos favoritos, historias y lo que deseen contar a sus amigos.
+
 El K-Pop, o música pop Coreana, es un estilo musical que tiene muchos adeptos en Asia, y que hoy en día está adquiriendo una inesperada popularidad en latinoamérica y recientemente en Chile. 
 
 La difusión del K-POP en latinoamérica se realiza mayormente a través de las redes sociales, y son los mismos seguidores quienes difunden las novedades. Por ejemplo, el grupo BTS tiene más de 20 millones de seguidores en su twitter oficial en coreano y aproximadamente 15 millones de seguidores en su twitter oficial en inglés.
 
-My Chingu, que en español significa "Mi Amigo", es una WebApp que surge para que los fans del de K-POP encuentren espacios comunes con fandoms chilenos y latinoamericanos. Podrán compartir sus Idols y grupos favoritos, historias y lo que deseen contar a sus amigos.
+
 
 #### A quién va dirigido
 * El producto está dirigido a los fans del K-POP, hombres y mujeres, predominantemente entre los 12 y 35 años, nativos digitales, y que consideran que las redes sociales son parte importante del día a día, que buscan un lugar exclusivo para ellos, donde se puedan intercambiar Idols (Ídolos), compartir mensajes, en un ambiente seguro, libre de bullying.
 
 #### Objetivo del producto.    
 * Se estimaron las necesidades del usuario realizando diferentes actividades:
-    - Búsqueda de redes sociales que estuvieran dedicadas de forma exclusiva al K-Pop.
+    - Investigación de redes sociales que estuvieran dedicadas de forma exclusiva al K-Pop.
     - Entrevista a consumidores de K-Pop considerando las siguientes preguntas:
         - Eres usuario de alguna red social? Cuál?
         - En qué medio buscas información de tus Idols o grupo favorito de K-Pop
@@ -36,9 +39,11 @@ Hoy en día las redes sociales dedicadas al K-Pop comparten su ambiente con otro
 
 #### Solución al problema.
 
-My Chingu entrega un espacio exclusivo para los Fans del K-Pop. Podrán registrarse de una manera sencilla, elegir en su perfil el estudio o grupo favorito (pronto disponible), que le permitirá econtrar otros fans con los mismos gustos.
-
-También el usuario podrá escribir en su muro sobre sus Bias, Idols y grupo favorito. 
+My Chingu entrega un espacio exclusivo para los Fans del K-Pop, donde podrán:
+- Registrarse de una manera fácil e intuitiva.
+- Encontrar otros fans con los mismos gustos.
+- Escribir en su muro (post) sobre sus Bias, Idols y grupos favoritos.
+- Elegir en su perfil el estudio o grupo favorito (pronto disponible).
 
 
 
@@ -46,13 +51,13 @@ También el usuario podrá escribir en su muro sobre sus Bias, Idols y grupo fav
 ## Planificación y Diseño
 ***
 Para el proceso de planificación y diseño se utilizaron las siguientes herramientas:    
+- Daily meeting: Determinación diara del trabajo realizado el día anterior, lo que se espera avanzar hoy y los impedimentos en el avance.
+
 - Trello: Nos permitió mantener el orden en el proceso de producción, a través del desarrollo de historias de usuario con la determición del criterio de aceptación y la definición de terminado. Puedes ver nuestro Trello pinchando [AQUÍ](https://trello.com/b/BoPsoPwa/red-social)
 
 - Diagramas de flujo: Diagrama que permitió definir el flujo que debía seguir el usuario al ingresar a la página web.
 - Figma: Interfaz de diseño colaborativa que permitió desarrollar el prototipo de alta fidelidad.
 
-Comparte fotos de entrevistas (si las tienes)
-cuestionarios y tus sketches/(bocetos).
 
 ### Historias de usuario
 Utilizamos las historias de usuario como el instrumento principal para identificar los requerimientos de usuario.
@@ -85,41 +90,48 @@ _Como_ usario quiero eliminar una publicación para _poder_ evitar que otros vea
 
 ### **Diseño de la Interfaz de Usuario**
 
-El proceso de diseño se realizó con base en las entrevistas y las historias de usuario y las necesidades que surgieron. 
+El proceso de diseño se realizó con base en laos resultados de las entrevistas a usuarios y las historias de usuario que se eleaboraron a partir de ellas.
 
 
-
-flujo que seguirá el usuario dentro de tu producto
-
+Primeramente se realizó un flujo que el usuario seguirá en la web
+![flujo](https://i.ibb.co/6WmCgtZ/sketch1.jpg)
 
 
 
 ### **Prototipo de Baja Fidelidad**
+Determinado el flujo se realizó el primer sketch. Este fue presentado en otros grupos de trabajo para recibir feedback.
 
 ![Prototipo baja](https://i.ibb.co/6WmCgtZ/sketch1.jpg)
 
-Primera Iteración
+Primera Iteración.
 ![Prototipo baja](https://i.ibb.co/vX69vpR/bajaiteracion.jpg) 
 
 
-#### Test de Usuario 1
+#### Test de Usuario
+Con la primera iteración se presentó el sketch a dos usuarios.
+
+Test 1
 ![TestUsuario1](https://i.ibb.co/LSpJTc6/test1.jpg)  
 
-#### Test de Usuario 2
+Test 2  
 ![TestUsuario2](https://i.ibb.co/hLxfDkN/test2.jpg)  
+
+Se obtuvieron las siguientes problemas de usabilidad:  
+- No hay boton para volver atrás. 
 
 
 ### **Prototipo Alta Fidelidad**
-Con los test de usuario  con proptotipo de baja fidelidad se llegó al diseño de alta fidelidad.
+De los test de usuario con proptotipo de baja fidelidad, se realizó la segunda iteración. Los cambios se realizaron en un diseño de alta fidelidad.
 ![Prototito alta fidelidad](https://i.ibb.co/wK661zt/altafid1.jpg)  
 ![Prototito alta fidelidad](https://i.ibb.co/RgSyZYH/altafid2.jpg)  
 
 
-#### Test de Usuario 1
+#### Test de Usuario
+En la realización del test de usuario se obtuvieron las siguientes problemas de usabilidad:  
+- No hay boton para volver atrás. 
 
 
 
-#### Test de Usuario 2
 
 ***
 ## Implementación de la Interfaz de Usuario
@@ -127,7 +139,7 @@ Con los test de usuario  con proptotipo de baja fidelidad se llegó al diseño d
 ![Implementación](https://i.ibb.co/k8sMw8r/portada-web1.jpg)  
 
 
-Nuestra interfaz cuenta con diferentes secciones:
+Nuestra interfaz web cuenta con diferentes secciones:
 - **Inicio (Home)**: Página inicial, invita al usuario a iniciar sesión mediante un botón en nav-bar o a registrarse mediante un botón central en el body.
 
 - **Registro**: página en la que el usuario podrá registrarse mediante el ingreso de un nombre de usuario, un mail y una contraseña. En caso de que se ingresen datos no válidos o que el mail ya existiera en la base de datos, el usuario recibe mensajes de error.
@@ -141,6 +153,15 @@ Futuras implementaciones:
 - **Preferencias**: El usuario podrá seleccionar las disqueras o grupos musicales favoritos. Esto permitirá que el usuario vea a otros usuarios con gustos similares.
 
 - **Perfil**: El usuario contará con un perfil con foto, donde además podrá visualizar sus preferencias, amigos, y editarlos.
+
+
+#### Test de Usuario
+En la realización del test de usuario se obtuvieron las siguientes problemas de usabilidad:  
+- No se muestra ícono de mostrar/ocultar contraseña.
+- Al presionar el logo podría llevar al inicio o al dashboard, dependiendo de si el usuario está logueado o no (por implementar en próxima iteración).
+- Que si el usuario está logueado ingrese directamente al dashboard (por implementar en próxima iteración).
+
+
 
 El resultado final de la implementación lo puedes ver en nuestro deployment de Git-Hub [AQUÍ](https://donapaz.github.io/SCL009-Social-Network/)
 
