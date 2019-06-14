@@ -69,7 +69,7 @@ button.delete-btns {
   margin-top: -18px;
   cursor: pointer;
 }
-img#cross-icon {
+i#cross-icon {
   padding-right: inherit;
 }
 p.user-name {

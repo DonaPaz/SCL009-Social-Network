@@ -15,7 +15,7 @@ export const toConect = (doc) => {
   deleteBtn.classList.add('delete-btns')
   //Saving post id as the btn id
   deleteBtn.setAttribute('id', doc.id);
-  deleteBtn.innerHTML = '<img id="cross-icon" width="15" src="../img/delete.svg" alt="Oculto">';
+  deleteBtn.innerHTML = '<i id="cross-icon" class="fas fa-times-circle"></i>';
   let postContainer = document.createElement('div');
   postContainer.classList.add('postContainer');
   let postTxt = document.createElement('p');
