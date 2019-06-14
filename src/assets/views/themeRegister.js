@@ -1,9 +1,9 @@
 import { registerUser } from '../js/auth.js';
 import { validateEmail} from '../js/validator.js';
 import { singInGoogle } from '../js/auth.js';
-import { themePreferences } from './themePreferences.js';
 import { themeSignIn } from './themeSignIn.js';
 import { eye } from '../js/lib.js';
+import { themePreferences } from './themePreferences.js';
 
 export const themeRegister = () => {
   //Acá se muestra input nombre, contraseña, correo. botón enviar y botón ingresar con google

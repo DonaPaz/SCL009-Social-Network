@@ -56,7 +56,7 @@ Para el proceso de planificación y diseño se utilizaron las siguientes herrami
 - Trello: Nos permitió mantener el orden en el proceso de producción, a través del desarrollo de historias de usuario con la determición del criterio de aceptación y la definición de terminado. Puedes ver nuestro Trello pinchando [AQUÍ](https://trello.com/b/BoPsoPwa/red-social)
 
 - Diagramas de flujo: Diagrama que permitió definir el flujo que debía seguir el usuario al ingresar a la página web.
-- Figma: Interfaz de diseño colaborativa que permitió desarrollar el prototipo de alta fidelidad.
+- Figma: Interfaz de diseño colaborativa que permitió desarrollar el prototipo de alta fidelidad. Puedes ver nuestro Trello pinchando [AQUÍ](https://www.figma.com/file/KaA85Hrz9RiAStv7wdQ6Souc/Red-social-MyChingu?node-id=0%3A1)
 
 
 ### Historias de usuario

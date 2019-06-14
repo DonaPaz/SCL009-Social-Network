@@ -151,23 +151,7 @@ export const getPost = () => {
     console.log("Error getting documents: ", error);
   });
 };
-/*export const newLike = (id) => {
-  var db = firebase.firestore();
-  // Add a new document with a generated id.
-  db.collection('posts').doc(id).get().then(doc =>{
-		db.collection('likes').add({
-		
-      postid: id,
-      like: txtCounter,
-		}).then(function(doc){
- 			console.log("Document written with ID: ", doc.id);
- 		}).catch(function(error) {
-        console.error("Error adding document: ", error);
-		});
-  })
 
-};
-*/
 
 //Function to know if there's an user loggedIn
 // Se le agrega un callback al observer para poder mostrar los post de forma asincrona
