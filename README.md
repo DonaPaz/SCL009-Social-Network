@@ -40,13 +40,14 @@ My Chingu entrega un espacio exclusivo para los Fans del K-Pop. Podrán registra
 
 También el usuario podrá escribir en su muro sobre sus Bias, Idols y grupo favorito. 
 
-Pronto! Podrá compartir fotos con otros usuarios o amigos.
+
 
 ***
 ## Planificación y Diseño
 ***
 Para el proceso de planificación y diseño se utilizaron las siguientes herramientas:    
-- Trello: Nos permitió mantener el orden en el proceso de producción, a través del desarrollo de historias de usuario con la determición del criterio de aceptación y la definición de terminado. Puedes ver nuestro Trello pinchando [AQUÍ](https://trello.com/b/BoPsoPwa/red-social)  
+- Trello: Nos permitió mantener el orden en el proceso de producción, a través del desarrollo de historias de usuario con la determición del criterio de aceptación y la definición de terminado. Puedes ver nuestro Trello pinchando [AQUÍ](https://trello.com/b/BoPsoPwa/red-social)
+
 - Diagramas de flujo: Diagrama que permitió definir el flujo que debía seguir el usuario al ingresar a la página web.
 - Figma: Interfaz de diseño colaborativa que permitió desarrollar el prototipo de alta fidelidad.
 
