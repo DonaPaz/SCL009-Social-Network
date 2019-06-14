@@ -9,7 +9,7 @@ button#eye_btn {
   cursor: pointer;
   border-width: 0px;
 }
-embed#eye_icon {
+i#eye_icon {
   width: 15px;
   height: 15px;
 }
