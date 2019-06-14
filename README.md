@@ -173,3 +173,5 @@ El resultado final de la implementación lo puedes ver en nuestro deployment de 
 - HTML5
 - CSS
 - Figma
+***
+~My Chingu Team~
