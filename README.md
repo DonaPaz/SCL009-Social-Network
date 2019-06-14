@@ -116,7 +116,7 @@ Test 1
 Test 2  
 ![TestUsuario2](https://i.ibb.co/hLxfDkN/test2.jpg)  
 
-Se obtuvieron las siguientes problemas de usabilidad:  
+Se obtuvieron los siguientes problemas de usabilidad:  
 - No hay boton para volver atrás. 
 
 
@@ -127,7 +127,7 @@ De los test de usuario con proptotipo de baja fidelidad, se realizó la segunda 
 
 
 #### Test de Usuario
-En la realización del test de usuario se obtuvieron las siguientes problemas de usabilidad:  
+En la realización del test de usuario se obtuvieron los siguientes problemas de usabilidad:  
 - No hay boton para volver atrás. 
 
 
@@ -156,7 +156,7 @@ Futuras implementaciones:
 
 
 #### Test de Usuario
-En la realización del test de usuario se obtuvieron las siguientes problemas de usabilidad:  
+En la realización del test de usuario se obtuvieron los siguientes problemas de usabilidad:  
 - No se muestra ícono de mostrar/ocultar contraseña.
 - Al presionar el logo podría llevar al inicio o al dashboard, dependiendo de si el usuario está logueado o no (por implementar en próxima iteración).
 - Que si el usuario está logueado ingrese directamente al dashboard (por implementar en próxima iteración).
