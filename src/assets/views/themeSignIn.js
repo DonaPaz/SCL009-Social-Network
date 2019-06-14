@@ -14,7 +14,7 @@ export const themeSignIn = () => {
   document.getElementById('content').innerHTML = `<h2>Iniciar sesión</h2>
                                                   <input id="txt-email" type="email" placeholder="email">
                                                   <p id="alert-txt-email"></p>
-                                                  <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><i id="eye_icon" class="fas fa-eye"></i></button><br>
+                                                  <input id="txt-password" type="password" placeholder="contraseña"><button id="eye_btn" type="button"><span id="span-eye" value="eye-opened"><i id="eye_icon" class="fas fa-eye"></i></span></button><br>
                                                   <p id="alert-txt-password"></p>
                                                   <button id="btn-init-google" class="btn btn-secondary">Iniciar con Google</button><br>
                                                   <button id="btn-enter">Entrar</button>`
